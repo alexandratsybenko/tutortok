@@ -1,6 +1,6 @@
 ---
 title: ERD-диаграммы
-sidebar_position: 1
+sidebar_position: 4
 ---
 
 ## Концептуальная модель
