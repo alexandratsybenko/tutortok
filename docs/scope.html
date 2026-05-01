@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-scope" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Концепция и границы проекта | Tutortok</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://alexandratsybenko.github.io/tutortok/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://alexandratsybenko.github.io/tutortok/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://alexandratsybenko.github.io/tutortok/docs/scope"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Концепция и границы проекта | Tutortok"><meta data-rh="true" name="description" content="Название проекта"><meta data-rh="true" property="og:description" content="Название проекта"><link data-rh="true" rel="icon" href="/tutortok/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://alexandratsybenko.github.io/tutortok/docs/scope"><link data-rh="true" rel="alternate" href="https://alexandratsybenko.github.io/tutortok/docs/scope" hreflang="en"><link data-rh="true" rel="alternate" href="https://alexandratsybenko.github.io/tutortok/docs/scope" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Концепция и границы проекта","item":"https://alexandratsybenko.github.io/tutortok/docs/scope"}]}</script><script src="https://cdn.jsdelivr.net/npm/docusaurus-plugin-drawio/viewer.min.js"></script><link rel="stylesheet" href="/tutortok/assets/css/styles.adbcd96e.css">
+<script src="/tutortok/assets/js/runtime~main.4ef2833f.js" defer="defer"></script>
+<script src="/tutortok/assets/js/main.b5749c75.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/tutortok/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/tutortok/"><div class="navbar__logo"><img src="/tutortok/img/logo.svg" alt="Tutortok Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/tutortok/img/logo.svg" alt="Tutortok Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Tutortok</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/tutortok/docs/scope">Документация</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/tutortok/docs/api/real">API</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/alexandratsybenko/tutortok" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/tutortok/docs/scope"><span title="Концепция и границы проекта" class="linkLabel_WmDU">Концепция и границы проекта</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tutortok/docs/requirements/functional"><span title="Требования" class="categoryLinkLabel_W154">Требования</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tutortok/docs/api/real"><span title="API" class="categoryLinkLabel_W154">API</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tutortok/docs/architecture/sequence-diagram"><span title="Архитектура" class="categoryLinkLabel_W154">Архитектура</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tutortok/docs/diagrams/use-case-diagram"><span title="Диаграммы" class="categoryLinkLabel_W154">Диаграммы</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tutortok/docs/erd"><span title="ERD-диаграммы" class="linkLabel_WmDU">ERD-диаграммы</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tutortok/docs/platform-strategy"><span title="Платформизация проекта" class="linkLabel_WmDU">Платформизация проекта</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/tutortok/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Концепция и границы проекта</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Концепция и границы проекта</h1></header><h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="название-проекта"><strong>Название проекта</strong><a href="#название-проекта" class="hash-link" aria-label="Direct link to название-проекта" title="Direct link to название-проекта" translate="no">​</a></h4>
+<p><strong>Тема курсовой работы:</strong>
+«Моя информационная система для поиска репетиторов иностранных языков с видеовизитками»</p>
+<p><strong>Краткое описание темы:</strong></p>
+<p>Проект представляет собой веб-платформу, где репетиторы иностранных языков создают профили с видеовизитками и бесплатными уроками, а ученики выбирают преподавателя на основе живого впечатления от видео и рекомендаций, которые формируются на основе их лайков. Видеовизитки просматриваются учениками в формате TikTok. В профиле репетитора доступна библиотека бесплатных уроков для оценки стиля объяснения, для связи используется встроенный чат, а все преподаватели проходят верификацию документов.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="бизнес-требования"><em><strong>Бизнес-требования</strong></em><a href="#бизнес-требования" class="hash-link" aria-label="Direct link to бизнес-требования" title="Direct link to бизнес-требования" translate="no">​</a></h4>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-описание-проблемы"><strong>1. Описание проблемы</strong><a href="#1-описание-проблемы" class="hash-link" aria-label="Direct link to 1-описание-проблемы" title="Direct link to 1-описание-проблемы" translate="no">​</a></h3>
+<p><strong>Проблема</strong>:</p>
+<ul>
+<li class="">Опишите, какую проблему решает ваш продукт или какую возможность он использует.</li>
+</ul>
+<p>Существующий процесс выбора преподавателя выглядит так:</p>
+<ol>
+<li class="">
+<p>Ученики тратят время на просмотр анкет.</p>
+</li>
+<li class="">
+<p>Проходят бесплатные пробные уроки, чтобы понять, подходит им формат занятий и преподаватель или же нет.</p>
+</li>
+<li class="">
+<p>В случае несовпадения по разным причинам, продолжают поиск онлайн-репетитора и переходят к пункту 1).</p>
+</li>
+</ol>
+<p>Текстовая информация в анкете, дипломы, сертификаты не дают понять, будет ли комфортно заниматься человеку с репетитором.</p>
+<p>Репетиторы снижают цены, чтобы выделиться среди конкурентов.</p>
+<ul>
+<li class="">Какие потребности и боли есть у вашей целевой аудитории?</li>
+</ul>
+<p>На рынке существует неудовлетворенная потребность в инструменте, который позволил бы оценить человеческий фактор до оплаты занятия.</p>
+<p><em>Ученики:</em></p>
+<ul>
+<li class="">
+<p>Невозможно оценить голос, манеру общения, энергетику по текстовой анкете</p>
+</li>
+<li class="">
+<p>Тратят время и деньги на несколько пробных занятий в поисках «своего» преподавателя</p>
+</li>
+<li class="">
+<p>Часто бросают изучение языка после неудачного выбора</p>
+</li>
+</ul>
+<p><em>Репетиторы:</em></p>
+<ul>
+<li class="">
+<p>Не могут выделиться среди сотен однотипных анкет</p>
+</li>
+<li class="">
+<p>Их главные преимущества (харизма, подход, акцент) не видны до первого урока</p>
+</li>
+<li class="">
+<p>Вынуждены конкурировать ценой, а не качеством</p>
+</li>
+</ul>
+<p><strong>Текущие альтернативы</strong>:</p>
+<ul>
+<li class="">
+<p>Какие решения на данный момент используют пользователи для решения этой проблемы?</p>
+</li>
+<li class="">
+<p>Почему эти решения недостаточны?</p>
+</li>
+</ul>
+<table><thead><tr><th>Решения на данный момент</th><th>Что предлагают</th><th>Почему этого недостаточно</th></tr></thead><tbody><tr><td><strong>Онлайн школы Skyeng, Инглекс</strong></td><td>Ученик заполняет анкету, ему присылают ссылку на пробный урок с одним преподавателем. Если не понравилось - подбирают другого. Можно послушать аудиоприветствие, посмотреть видео.</td><td>Ученику предлагают преподавателя самостоятельно.  Нельзя полистать разных преподавателей и сравнить. Видеоформат: без скроллинга. Быстрого контента нет, приходится просматривать каждого репетитора по очереди. Отбор идет по формальным критериям</td></tr><tr><td><strong>Биржи для поиска услуг специалистов из разных сфер <a href="https://profi.ru/" target="_blank" rel="noopener noreferrer" class="">Profi.ru</a>, Авито</strong></td><td>Доска объявлений. Репетиторы размещают текстовые объявления, иногда с фото. Ученик пишет 5-10 специалистам, ждет откликов, потом договаривается.</td><td>Ученик читает только тексты о достижениях и качествах репетитора и не может проверить, подходит ли ему формат обучения, пока не пройдет пробное занятие</td></tr><tr><td><strong>Сервисы для поиска репетиторов Preply, Italki</strong></td><td>Каталог с тысячами репетиторов. У многих есть видео. Есть фильтры: цена, страна, отзывы. Можно написать преподавателю.</td><td>Видео не решает проблему выбора. Чтобы найти подходящего репетитора, нужно пересмотреть десятки анкет. Отсутствует помощь алгоритма. Основной фильтр - цена. Нет проверки документов, могут быть фейки.</td></tr><tr><td><strong>Каналы в Телеграмм, чаты</strong></td><td>Люди публикуют посты «ищу репетитора» или «репетитор ищет учеников», все общение в личных сообщениях.</td><td>Информация теряется в мессенджере, поиска нет, фильтров нет. Сравнить двух репетиторов невозможно, нужно вести переписку с каждым. Работает только для тех, кому повезло найти случайно подходящего кандидата</td></tr><tr><td><strong>Сайты-визитки репетиторов</strong></td><td>Преподаватель делает свой сайт с фото, видео, ценами, программой.</td><td>Ученику нужно открыть много разных сайтов, чтобы сравнить преподавателей. У всех разная структура, непонятно, где правда, а где маркетинг. Нет единого каталога, нет возможности отфильтровать. В топ попадают только продвинутые сайты</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-целевая-аудитория"><strong>2. Целевая аудитория</strong><a href="#2-целевая-аудитория" class="hash-link" aria-label="Direct link to 2-целевая-аудитория" title="Direct link to 2-целевая-аудитория" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="сегменты-аудитории"><strong>Сегменты аудитории</strong>:<a href="#сегменты-аудитории" class="hash-link" aria-label="Direct link to сегменты-аудитории" title="Direct link to сегменты-аудитории" translate="no">​</a></h4>
+<ul>
+<li class="">Опишите ключевые сегменты пользователей, которые будут использовать продукт.</li>
+</ul>
+<p><em>Пользователи, которые ищут услугу:</em></p>
+<ol>
+<li class="">Ученики, изучающие иностранные языки самостоятельно</li>
+</ol>
+<p>Подростки и взрослые (примерно 16-45 лет), которые хотят выучить язык для учёбы, экзамена, работы, переезда или путешествий. Те, кто возможно уже сталкивались с низким качеством подбора преподавателя и тратой времени на неудачные пробные уроки.</p>
+<p>Акцент делаем преимущественно на молодежь, так как клиповый формат просмотра видеороликов (как в TikTok) является привычным благодаря быстрому формату и возможности свайпа. Основная часть молодежи, которой нужен репетитор - школьники, ученики старших классов, сдающие экзамены, студенты.</p>
+<ol>
+<li class="">Родители школьников</li>
+</ol>
+<p>Ищут преподавателя для ребёнка, но не могут оценить уровень объяснения и то, как ребёнок с ним сработается, пока не пройдут несколько пробных уроков. Хотят заранее увидеть, как репетитор говорит, объясняет и взаимодействует, чтобы сделать максимально удачный выбор для образования детей.</p>
+<p><em>Репетиторы, оказывающие услуги:</em></p>
+<ol>
+<li class="">Начинающие и действующие репетиторы иностранных языков</li>
+</ol>
+<p>Частные преподаватели, которые уже работают на других платформах или ищут первых учеников. Чаще всего конкурируют за внимание за счёт цены и вынуждены заполнять однотипные текстовые анкеты, где сложно показать свои реальные сильные стороны.</p>
+<ol>
+<li class="">Продвинутые репетиторы и эксперты (в т.ч. носители языка)</li>
+</ol>
+<p>Преподаватели с опытом, собственной методикой. Хотят показать свое знание разговорного языка.</p>
+<ol>
+<li class="">Небольшие языковые студии и микрошколы</li>
+</ol>
+<p>Небольшие команды преподавателей, которым нужен прозрачный, проверенный канал привлечения учеников и витрина с видеоформатом. Готовы загружать библиотеку бесплатных уроков и видеовизиток для развития личного бренда студии.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="потребности-и-ожидания"><strong>Потребности и ожидания</strong>:<a href="#потребности-и-ожидания" class="hash-link" aria-label="Direct link to потребности-и-ожидания" title="Direct link to потребности-и-ожидания" translate="no">​</a></h4>
+<ul>
+<li class="">Опишите потребности и ожидания целевой аудитории. Какие результаты они ожидают от использования продукта?</li>
+</ul>
+<p><strong>Ученики:</strong></p>
+<ul>
+<li class="">
+<p>Возможность быстро понять совместимость с преподавателем до оплаты занятия: увидеть лицо, голос, акцент, манеру объяснения и взаимодействия с учеником.</p>
+</li>
+<li class="">
+<p>Сокращение количества неудачных пробных уроков за счёт видео‑визиток и библиотеки бесплатных уроков, где сразу виден реальный стиль преподавания.</p>
+</li>
+<li class="">
+<p>Удобный каталог с рекомендациями, основанными на лайках: платформа сама обучается по их предпочтениям и постепенно показывает более релевантных преподавателей.</p>
+</li>
+<li class="">
+<p>Уверенность в безопасности и качестве: проверка документов репетитора, понятные профили.</p>
+</li>
+<li class="">
+<p>Экономия времени.</p>
+</li>
+</ul>
+<p><strong>Репетиторы:</strong></p>
+<ul>
+<li class="">
+<p>Инструмент, который позволяет выделиться личностью.</p>
+</li>
+<li class="">
+<p>Возможность выстроить продающий профиль из видеовизитки и библиотеки бесплатных уроков, чтобы к ним приходили уже более подходящие ученики.</p>
+</li>
+<li class="">
+<p>Повышение доверия учеников за счёт верификации документов и прозрачного профиля.</p>
+</li>
+<li class="">
+<p>Возможность получать достойную оплату за свой труд, а не снижать цену, чтобы быть замеченным</p>
+</li>
+</ul>
+<p><strong>Родители:</strong></p>
+<ul>
+<li class="">
+<p>Понимание, как репетитор будет взаимодействовать с ребёнком: возможность оценить уровень эмпатии, темп речи, понятность объяснений до первого урока</p>
+</li>
+<li class="">
+<p>Уверенность, что преподаватель найдет подход к ребенку, не будет слишком строгим или слишком мягким</p>
+</li>
+<li class="">
+<p>Безопасность: проверка документов репетитора, отсутствие фейков</p>
+</li>
+</ul>
+<p><strong>Языковые студии:</strong></p>
+<ul>
+<li class="">
+<p>Прозрачный канал привлечения учеников с возможностью показать нескольких преподавателей сразу</p>
+</li>
+<li class="">
+<p>Витрина с видеоформатом для демонстрации методики и стиля преподавания</p>
+</li>
+<li class="">
+<p>Возможность загружать библиотеку бесплатных уроков для развития личного бренда студии</p>
+</li>
+<li class="">
+<p>Система рекомендаций, которая подбирает репетиторов студии подходящим ученикам</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-стейкхолдеры"><strong>3. Стейкхолдеры</strong><a href="#3-стейкхолдеры" class="hash-link" aria-label="Direct link to 3-стейкхолдеры" title="Direct link to 3-стейкхолдеры" translate="no">​</a></h3>
+<p><strong>Ключевые стейкхолдеры</strong>:</p>
+<ul>
+<li class="">Определите ключевых стейкхолдеров проекта (например, клиенты, инвесторы, внутренние команды).</li>
+</ul>
+<p><strong>Роль стейкхолдеров</strong>:</p>
+<ul>
+<li class="">Опишите роль каждого стейкхолдера в проекте и его влияние на принятие решений.</li>
+</ul>
+<p><strong>Внутренние стейкхолдеры</strong></p>
+<p><strong>Основатель / Product Owner</strong> - инициатор проекта, определяет видение продукта и бизнес-цели. Принимает финальные решения по стратегии, приоритетам функций и бюджету. Отвечает за результат перед инвесторами. Влияние максимальное.</p>
+<p><strong>Команда разработки</strong> - программисты, дизайнеры, тестировщики. Оценивают техническую реализуемость, сроки, предупреждают о рисках. Влияние: если задача технически окажется сложной, приоритеты, временные ограничения могут быть пересмотрены.</p>
+<p><strong>Внешние стейкхолдеры</strong></p>
+<p><strong>Инвесторы</strong> - предоставляют финансирование для развития платформы. Контролируют ключевые метрики (DAU, конверсия, выручка). При неудовлетворительных показателях могут прекратить дальнейшие вложения. Влияние высокое через бюджет.</p>
+<p><strong>Ученики</strong> - конечные пользователи, которые ищут репетитора. Их поведение (лайки, просмотры, записи) определяет успех продукта. Влияние критическое, все решения принимаются с учетом их потребностей, обратная связь диктует доработки интерфейса и алгоритмов.</p>
+<p><strong>Репетиторы</strong> - пользователи, создающие контент. Загружают видео, проходят верификацию, общаются в чате. Влияние: их удовлетворённость определяет качество лидов и наполняемость платформы; запросы влияют на инструменты для профилей и расписания.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-бизнес-цели-и-ключевые-метрики"><strong>4. Бизнес-цели и ключевые метрики</strong><a href="#4-бизнес-цели-и-ключевые-метрики" class="hash-link" aria-label="Direct link to 4-бизнес-цели-и-ключевые-метрики" title="Direct link to 4-бизнес-цели-и-ключевые-метрики" translate="no">​</a></h3>
+<p><strong>Основные бизнес-цели</strong>:</p>
+<ul>
+<li class="">
+<p>Определите ключевые цели, которых вы планируете достичь с помощью продукта (например, увеличение дохода, рост вовлеченности пользователей и т.д.).</p>
+<ul>
+<li class="">
+<p><strong>Цели должны быть сформулированы по SMART:</strong></p>
+<ul>
+<li class="">
+<p>Specific (конкретные)</p>
+</li>
+<li class="">
+<p>Measurable (измеримые)</p>
+</li>
+<li class="">
+<p>Achievable (достижимые)</p>
+</li>
+<li class="">
+<p>Relevant (релевантные)</p>
+</li>
+<li class="">
+<p>Time-bound (ограниченные во времени)</p>
+</li>
+</ul>
+<p>|№|Бизнес-цель|SMART-формулировка|
+|-|-|-|
+|<strong>1</strong>|<strong>Выход на операционную безубыточность</strong>|Достичь ежемесячной выручки 80 000 рублей к концу 6 месяца после запуска|
+|<strong>2</strong>|<strong>Монетизация аудитории</strong>|Получить 61 500 рублей ежемесячного дохода к концу первого полугодия (37 500 руб комиссия + 24 000 руб платные размещения)|
+|<strong>3</strong>|<strong>Рост базы платящих клиентов</strong>|Довести количество учеников, оплативших хотя бы один урок, до 100 человек к концу 6 месяца|
+|<strong>4</strong>|<strong>Привлечение платящих репетиторов</strong>|Привлечь 30 репетиторов на платные тарифы к концу первого полугодия|
+|<strong>5</strong>|<strong>Экономика привлечения</strong>|Достичь соотношения LTV/CAC не менее 3 к концу первого года|
+|<strong>6</strong>|<strong>Транзакционная активность</strong>|Обеспечить проведение 250 оплаченных уроков через платформу к концу 6 месяца|</p>
+<p><strong>Ключевые метрики (KPIs)</strong>:</p>
+<ul>
+<li class="">Опишите, как вы будете измерять успешность продукта. Укажите метрики (например, рост числа пользователей, улучшение времени выполнения задачи и т.д.).</li>
+</ul>
+<p>Успешность продукта измеряется через достижение бизнес-целей. Каждая метрика привязана к конкретной цели и показывает прогресс ее достижения.</p>
+<p>|Метрика|Что измеряет|Целевое значение (6 мес)|
+|-|-|-|
+|<strong>Общая ежемесячная выручка</strong>|Сумма всех доходов платформы|80 000 руб/мес|
+|<strong>Доход от комиссии с уроков</strong>|15% от оплаченных уроков|37 500 руб/мес|
+|<strong>Доход от платных размещений</strong>|Платежи репетиторов за премиум-доступ|24 000 руб/мес|
+|<strong>Количество платящих учеников</strong>|Ученики, оплатившие хотя бы 1 урок|100 человек|
+|<strong>Количество платящих репетиторов</strong>|Репетиторы с активным платным тарифом|30 человек|
+|<strong>Количество оплаченных уроков</strong>|Все завершенные уроки через платформу|250 уроков|
+|<strong>Конверсия из чата в оплату</strong>|% учеников, оплативших урок после общения|≥ 25%|
+|<strong>LTV/CAC</strong>|Отношение дохода с ученика к затратам на привлечение|≥ 3|
+|<strong>Retention платящих учеников</strong>|% учеников, взявших повторный урок|≥ 30%|</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-описание-продукта"><strong>5. Описание продукта</strong><a href="#5-описание-продукта" class="hash-link" aria-label="Direct link to 5-описание-продукта" title="Direct link to 5-описание-продукта" translate="no">​</a></h3>
+<p><strong>Общая концепция</strong>:</p>
+<ul>
+<li class="">Кратко опишите суть вашего продукта и его основную ценность для бизнеса и пользователей.</li>
+</ul>
+<p><strong>Суть продукта:</strong>
+Веб-платформа для поиска репетиторов иностранных языков, где ученики просматривают видеовизитки в TikTok-формате, ставят лайки для персональных рекомендаций и оценивают стиль преподавания через бесплатные уроки в профиле. Прежде чем записываться и платить, ученик может посмотреть 10-15 минут реального занятия в профиле, чтобы понять, подходит ли ему преподаватель. После выбора пользователь договаривается о времени в удобном чате, оплачивает первое занятие через платформу, а сам урок проходит в Яндекс Телемосте. Репетиторы проходят верификацию документов и могут за дополнительную плату поднимать свои профили в выдаче.</p>
+<p><strong>Основная ценность:</strong></p>
+<ul>
+<li class="">
+<p><strong>Ученикам:</strong> правильный выбор репетитора с первого просмотра - экономия времени и денег на пробных уроках.</p>
+</li>
+<li class="">
+<p><strong>Репетиторам:</strong> выделение с помощью яркой презентации своих навыков, целевые ученики.</p>
+</li>
+<li class="">
+<p><strong>Бизнесу:</strong> комиссия 15% с уроков + платные размещения репетиторов на растущем рынке ($56 млрд к 2033).</p>
+</li>
+</ul>
+<p><strong>Ключевые функции</strong>:</p>
+<ul>
+<li class="">Перечислите ключевые функции продукта, которые решают проблемы целевой аудитории.</li>
+</ul>
+<p><strong>Тип пользователя 1: Ученик</strong></p>
+<p>Путь ученика: Свайп → Оценить → Записаться</p>
+<p>Функции для ученика:</p>
+<ol>
+<li class="">
+<p>Регистрация и авторизация (email / телефон)</p>
+</li>
+<li class="">
+<p>TikTok-лента видеовизиток. Вертикальные видео (15-60 сек): репетитор представляется, показывает стиль объяснения, акценты. Лайки формируют персональные рекомендации.</p>
+</li>
+<li class="">
+<p>Библиотека бесплатных уроков в профиле. Несколько видео, демонстрирующих реальный стиль преподавания.</p>
+</li>
+<li class="">
+<p>Персональные рекомендации по лайкам. Алгоритм подбирает похожих репетиторов (стиль, уровень A1-C2).</p>
+</li>
+<li class="">
+<p>Встроенный чат. Обсуждение целей обучения, договоренность о времени урока.</p>
+</li>
+<li class="">
+<p>Оплата первого урока. Деньги замораживаются и переводятся репетитору после подтверждения, что урок состоялся. Комиссия 15%.</p>
+</li>
+<li class="">
+<p>Ссылка на Яндекс Телемост. После оплаты репетитор получает уведомление и отправляет ссылку на свой Телемост во встроенном чате. Ученик переходит - урок идет в браузере, ничего устанавливать не надо.</p>
+</li>
+</ol>
+<p><strong>Тип пользователя 2: Репетитор</strong></p>
+<p>Путь репетитора: Заполнить данные → Получать заявки → Проводить уроки</p>
+<p>Функции для репетитора:</p>
+<ol>
+<li class="">
+<p>Регистрация и авторизация (email / телефон)</p>
+</li>
+<li class="">
+<p>Видео-визитка в профиле. Короткое видео (15–60 сек), где репетитор представляется, показывает свою подачу. Главный инструмент самопрезентации.</p>
+</li>
+<li class="">
+<p>Загрузка бесплатных уроков. Возможность загрузить короткие обучающие видео в свой профиль. Ученики видят стиль преподавания до оплаты.</p>
+</li>
+<li class="">
+<p>Верификация документов. Загрузка паспорта и других данных. После проверки профиль получает значок «подтверждено». Отсеивает фейков, повышает доверие.</p>
+</li>
+<li class="">
+<p>Встроенный чат с учениками.</p>
+</li>
+<li class="">
+<p>Платные тарифы для продвижения профиля. Возможность за фиксированную плату поднимать свой профиль выше в ленте и получать больше просмотров и заявок.</p>
+</li>
+<li class="">
+<p>Автоматические выплаты на карту. После подтверждения урока деньги автоматически приходят на карту репетитора.</p>
+</li>
+<li class="">
+<p>Статистика просмотров и лайков на видео.</p>
+</li>
+</ol>
+<p><strong>Тип пользователя 3: Администратор</strong></p>
+<p>Функции для администратора:</p>
+<ol>
+<li class="">
+<p>Модерация документов репетиторов</p>
+</li>
+<li class="">
+<p>Модерация видео</p>
+</li>
+<li class="">
+<p>Админка для управления пользователями</p>
+</li>
+<li class="">
+<p>Платежная система с холдированием средств</p>
+</li>
+<li class="">
+<p>Сбор и анализ метрик</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-риски"><strong>6. Риски</strong><a href="#6-риски" class="hash-link" aria-label="Direct link to 6-риски" title="Direct link to 6-риски" translate="no">​</a></h3>
+<p><strong>Риски и стратегии управления рисками</strong>:</p>
+<ul>
+<li class="">
+<p>Опишите потенциальные риски, которые могут возникнуть при реализации проекта (например, технические сложности, изменения на рынке).</p>
+</li>
+<li class="">
+<p>Укажите стратегии по работе с этими рисками.</p>
+</li>
+</ul>
+<table><thead><tr><th>№</th><th>Риск</th><th>Причина</th><th>Стратегия минимизации</th><th>Вероятность</th><th>Влияние</th></tr></thead><tbody><tr><td>1</td><td>Медленный рост базы репетиторов (<code>&lt;50</code> за месяц)</td><td>Репетиторы не видят ценности платформы</td><td>Таргетированная реклама в Telegram, бесплатный первый месяц премиум, партнёрство со студиями</td><td>Высокая</td><td>Критическое</td></tr><tr><td>2</td><td>Низкая конверсия учеников (<code>&lt;15</code>% просмотров профиля)</td><td>Плохие видеовизитки, слабый алгоритм</td><td>Гайды по съёмке видео, A/B‑тесты рекомендаций, уведомления и доработки UX</td><td>Средняя</td><td>Высокое</td></tr><tr><td>3</td><td>Блокировка платежей банками</td><td>Классификация как «рисковый бизнес»</td><td>Использование нескольких провайдеров (ЮKassa/CloudPayments и др.), юрсопровождение, ручная модерация споров</td><td>Низкая</td><td>Критическое</td></tr><tr><td>4</td><td>Низкое качество видеовизиток</td><td>Репетиторы не умеют снимать TikTok‑формат</td><td>Гайды по съёмке (скрипт, свет, монтаж), обучающие материалы, автоматическая базовая проверка качества</td><td>Высокая</td><td>Высокое</td></tr><tr><td>5</td><td>Подделка документов при верификации</td><td>Фейковые дипломы и удостоверения</td><td>Ручная модерация + автоматическая проверка, подключение сервисов верификации личности</td><td>Средняя</td><td>Среднее</td></tr><tr><td>6</td><td>Срыв сроков разработки MVP</td><td>Недооценка объёма работ, изменения требований, параллельная занятость команды</td><td>Жёсткая приоритизация по MoSCoW, фиксация границ MVP, запрет на добавление фич без снятия менее приоритетных, регулярные ревизии плана</td><td>Средняя</td><td>Критическое</td></tr><tr><td>7</td><td>Перерасход бюджета</td><td>Недооценка затрат, появление дополнительных задач (юрист, маркетинг, инфраструктура)</td><td>Резерв 10–15%, поквартальный контроль затрат, поэтапное финансирование, заморозка необязательных задач при выходе за бюджет</td><td>Средняя</td><td>Высокое</td></tr><tr><td>8</td><td>Низкая вовлечённость учеников в ленту видео</td><td>Лента/UX не интуитивны, первые видео недостаточно качественные</td><td>UX‑тестирование на небольшой группе, доработка ленты, методички для репетиторов по структуре</td><td>Средняя</td><td>Высокое</td></tr><tr><td>9</td><td>Технические сбои при проведении уроков во внешнем видеосервисе</td><td>Проблемы на стороне видеосервиса или интернета пользователей, изменения API</td><td>Наличие fallback‑сценариев (альтернативный сервис), информирование пользователей, анализ сбоев</td><td>Средняя</td><td>Среднее</td></tr><tr><td>10</td><td>Юридические риски (контент, персональные данные)</td><td>Публикация неподходящего контента</td><td>Пользовательское соглашение и политика конфиденциальности, правила контента, ручная модерация спорных видео, скрытие лишних персональных данных в публичной части</td><td>Низкая-средняя</td><td>Критическое</td></tr><tr><td>11</td><td>Низкая эффективность маркетинга</td><td>Неверный выбор каналов и креативов, слабое позиционирование</td><td>Тест нескольких гипотез с малыми бюджетами, быстрый перенос средств в работающие каналы, упор на сотрудничество (студии, блогеры)</td><td>Средняя</td><td>Высокое</td></tr></tbody></table>
+<p><em><strong>Границы и ограничения</strong></em></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-основные-функции-продукта">7. Основные функции продукта:<a href="#7-основные-функции-продукта" class="hash-link" aria-label="Direct link to 7. Основные функции продукта:" title="Direct link to 7. Основные функции продукта:" translate="no">​</a></h3>
+<ul>
+<li class="">Перечислите функции, которые будут реализованы в текущей версии продукта.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="m---must-have-обязательно">M - Must have (Обязательно)<a href="#m---must-have-обязательно" class="hash-link" aria-label="Direct link to M - Must have (Обязательно)" title="Direct link to M - Must have (Обязательно)" translate="no">​</a></h4>
+<p><strong>Для учеников:</strong></p>
+<ol>
+<li class="">
+<p>Регистрация и авторизация</p>
+</li>
+<li class="">
+<p>TikTok-лента с видео-визитками</p>
+</li>
+<li class="">
+<p>Лайки видео</p>
+</li>
+<li class="">
+<p>Просмотр профиля репетитора</p>
+</li>
+<li class="">
+<p>Просмотр бесплатных уроков в профиле</p>
+</li>
+<li class="">
+<p>Встроенный чат с репетитором</p>
+</li>
+<li class="">
+<p>Фильтры в ленте (по цене, опыту, цели обучения)</p>
+</li>
+<li class="">
+<p>Оплата первого урока через платформу (с холдированием)</p>
+</li>
+<li class="">
+<p>Получение ссылки на видеочат в чате после оплаты</p>
+</li>
+</ol>
+<p><strong>Для репетиторов:</strong></p>
+<ol>
+<li class="">
+<p>Регистрация и авторизация</p>
+</li>
+<li class="">
+<p>Создание и редактирование профиля</p>
+</li>
+<li class="">
+<p>Загрузка видео-визитки</p>
+</li>
+<li class="">
+<p>Загрузка бесплатных уроков (минимум 2 видео)</p>
+</li>
+<li class="">
+<p>Верификация документов (значок «подтверждено»)</p>
+</li>
+<li class="">
+<p>Встроенный чат с учениками</p>
+</li>
+<li class="">
+<p>Вывод заработанных средств на карту</p>
+</li>
+</ol>
+<p><strong>Для платформы:</strong></p>
+<ol>
+<li class="">
+<p>Модерация документов репетиторов</p>
+</li>
+<li class="">
+<p>Модерация видео (базовая проверка качества)</p>
+</li>
+<li class="">
+<p>Админка для управления пользователями</p>
+</li>
+<li class="">
+<p>Интеграция с платежной системой (холдирование)</p>
+</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="s---should-have-желательно">S - Should have (Желательно)<a href="#s---should-have-желательно" class="hash-link" aria-label="Direct link to S - Should have (Желательно)" title="Direct link to S - Should have (Желательно)" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p>История уроков и платежей в личном кабинете ученика</p>
+</li>
+<li class="">
+<p>Напоминания о предстоящем уроке (уведомления)</p>
+</li>
+<li class="">
+<p>Платные тарифы для продвижения профилей репетиторов</p>
+</li>
+<li class="">
+<p>Система уведомлений о новых сообщениях в чате</p>
+</li>
+</ol>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="c---could-have-возможно">C - Could have (Возможно)<a href="#c---could-have-возможно" class="hash-link" aria-label="Direct link to C - Could have (Возможно)" title="Direct link to C - Could have (Возможно)" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p>Персональные рекомендации на основе лайков</p>
+</li>
+<li class="">
+<p>Отзывы и рейтинги после проведенных уроков</p>
+</li>
+<li class="">
+<p>Кнопка «Пожаловаться» в профиле и чате</p>
+</li>
+<li class="">
+<p>Автоматическое создание встреч в Яндекс Телемосте через API</p>
+</li>
+<li class="">
+<p>Расширенная статистика для репетиторов (конверсия в чат, в оплату)</p>
+</li>
+<li class="">
+<p>Сохранение избранных репетиторов в «Закладки»</p>
+</li>
+</ol>
+<ul>
+<li class="">Укажите функции, которые не будут реализованы в рамках текущей версии продукта.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="w---wont-have-не-будет">W - Won&#x27;t have (Не будет)<a href="#w---wont-have-не-будет" class="hash-link" aria-label="Direct link to W - Won&#x27;t have (Не будет)" title="Direct link to W - Won&#x27;t have (Не будет)" translate="no">​</a></h3>
+<p><em>Функции, которые сознательно отложены на будущие версии.</em></p>
+<ol>
+<li class="">
+<p>Собственный видеочат (используем Яндекс Телемост)</p>
+</li>
+<li class="">
+<p>Нативные мобильные приложения (только адаптивная веб-версия)</p>
+</li>
+<li class="">
+<p>Сложные ИИ-рекомендации (только простая фильтрация по тегам)</p>
+</li>
+<li class="">
+<p>Автоматическая запись на урок (только договоренности в чате)</p>
+</li>
+<li class="">
+<p>Групповые занятия (только индивидуальные)</p>
+</li>
+<li class="">
+<p>Подписки и пакеты уроков (только разовая оплата)</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="8-версии-продукта-и-план-развития"><strong>8. Версии продукта и план развития</strong><a href="#8-версии-продукта-и-план-развития" class="hash-link" aria-label="Direct link to 8-версии-продукта-и-план-развития" title="Direct link to 8-версии-продукта-и-план-развития" translate="no">​</a></h3>
+<ul>
+<li class="">Опишите план развития продукта на следующие версии. Укажите, какие функции и обновления планируется добавить на каждом этапе.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="версия-10---mvp"><strong>Версия 1.0 - MVP</strong><a href="#версия-10---mvp" class="hash-link" aria-label="Direct link to версия-10---mvp" title="Direct link to версия-10---mvp" translate="no">​</a></h4>
+<p><strong>Цель:</strong> Проверить ключевую гипотезу: будут ли ученики выбирать репетиторов по видео-ленте, а репетиторы записывать видео и проходить верификацию.</p>
+<p><strong>Срок:</strong> 6 месяцев с начала работы над проектом</p>
+<p>Версия 1.0 включает все функции из раздела 7 (Must Have)</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="версия-20---улучшение-пользовательского-опыта">Версия 2.0 - Улучшение пользовательского опыта<a href="#версия-20---улучшение-пользовательского-опыта" class="hash-link" aria-label="Direct link to Версия 2.0 - Улучшение пользовательского опыта" title="Direct link to Версия 2.0 - Улучшение пользовательского опыта" translate="no">​</a></h4>
+<p><strong>Цель:</strong> Повысить удобство платформы и улучшить рекомендации.</p>
+<p><strong>Срок:</strong> 3-4 месяца после стабильного запуска v1.0</p>
+<p><strong>Новые функции (перевод из Could Have в реализованные):</strong></p>
+<ul>
+<li class="">
+<p>Персональные рекомендации на основе лайков</p>
+</li>
+<li class="">
+<p>Отзывы и рейтинги после проведенных уроков</p>
+</li>
+<li class="">
+<p>Кнопка «Пожаловаться» в профиле и чате</p>
+</li>
+<li class="">
+<p>Автоматическое создание встреч в Яндекс Телемосте через API</p>
+</li>
+<li class="">
+<p>Расширенная статистика для репетиторов (конверсия в чат, в оплату)</p>
+</li>
+<li class="">
+<p>Сохранение избранных репетиторов в «Закладки»</p>
+</li>
+</ul>
+<p><strong>Улучшения:</strong></p>
+<ul>
+<li class="">
+<p>Оптимизация скорости загрузки ленты</p>
+</li>
+<li class="">
+<p>Улучшение алгоритмов модерации</p>
+</li>
+<li class="">
+<p>A/B тестирование разных форматов видео</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="версия-30---масштабирование">Версия 3.0 - Масштабирование<a href="#версия-30---масштабирование" class="hash-link" aria-label="Direct link to Версия 3.0 - Масштабирование" title="Direct link to Версия 3.0 - Масштабирование" translate="no">​</a></h4>
+<p><strong>Цель:</strong> Расширение функциональности и выход на новые рынки.</p>
+<p><strong>Срок:</strong> 6-8 месяцев после v2.0</p>
+<p><strong>Новые функции (из Won&#x27;t have, которые становятся возможными):</strong></p>
+<ul>
+<li class="">
+<p>Автоматическая запись на урок (календарь с выбором слотов, без ручных договоренностей)</p>
+</li>
+<li class="">
+<p>Подписки и пакеты уроков</p>
+</li>
+<li class="">
+<p>Групповые занятия</p>
+</li>
+<li class="">
+<p>Нативные мобильные приложения (iOS/Android)</p>
+</li>
+<li class="">
+<p>Сложные ИИ-рекомендации (машинное обучение на основе накопленных данных)</p>
+</li>
+</ul>
+<p><strong>Функции, которые остаются в Won&#x27;t have (не планируются в обозримом будущем):</strong></p>
+<ul>
+<li class="">Собственный видеочат (продолжаем использовать Яндекс Телемост)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="9-ограничения"><strong>9. Ограничения</strong><a href="#9-ограничения" class="hash-link" aria-label="Direct link to 9-ограничения" title="Direct link to 9-ограничения" translate="no">​</a></h3>
+<p><strong>Бюджет</strong>:</p>
+<ul>
+<li class="">Определите бюджет, который заложен на разработку и маркетинг продукта.</li>
+</ul>
+<p><strong>Статьи бюджета:</strong></p>
+<table><thead><tr><th>Статья расходов</th><th>Сумма, руб.</th><th></th></tr></thead><tbody><tr><td>Фонд оплаты труда (6 месяцев)</td><td>1 700 000–2 300 000</td><td>Команда 3-4 человека: backend, frontend, дизайнер/аналитик, частичный QA</td></tr><tr><td>Регистрация юрлица и юруслуги</td><td>20 000–30 000</td><td>Госпошлины, ЭЦП, базовое юр. сопровождение</td></tr><tr><td>Онлайн‑касса (ККТ)</td><td>15 000–25 000</td><td>Подключение для приёма платежей от физлиц</td></tr><tr><td>Серверная инфраструктура (6 мес)</td><td>15 000–25 000</td><td>Облачные серверы для бэкенда и базы данных</td></tr><tr><td>Хранение и отдача видео (6 мес)</td><td>6 000–12 000</td><td>Облачное S3‑хранилище для видеовизиток и уроков</td></tr><tr><td>Платёжная система (комиссии)</td><td>7 000–12 000</td><td>Эквайринг при небольшом обороте на старте</td></tr><tr><td>Маркетинг (первые 3–4 месяца)</td><td>100 000-180 000</td><td>Реклама в VK/Telegram в тематических каналах</td></tr><tr><td>ПО и инструменты</td><td>5 000-10 000</td><td>Платные тарифы отдельных сервисов при необходимости</td></tr><tr><td>Резерв (10%)</td><td>160 000- 250 000</td><td>Непредвиденные расходы</td></tr></tbody></table>
+<p>Итого: для разработки и запуска MVP в течение 6 месяцев закладывается бюджет в диапазоне 2**,**0-2,8 млн рублей. ****</p>
+<p>Это ограничение означает, что проект должен строго придерживаться выбранного набора функций (Must have + часть Should have), а дорогостоящие направления (ИИ‑метчинг, мобильные приложения, собственный видеочат) откладываем на последующие версии.</p>
+<p><strong>Сроки</strong>:</p>
+<ul>
+<li class="">Укажите ключевые сроки реализации продукта и основные вехи проекта.</li>
+</ul>
+<p>Реализация MVP продукта ограничена 6 месяцами.</p>
+<p><strong>Этап 1. Аналитика (Discovery) - 1 месяц</strong></p>
+<p>Сбор и уточнение бизнес‑требований, анализ рынка и конкурентов.</p>
+<p>Описание целевой аудитории, стейкхолдеров, пользовательских сценариев.</p>
+<p>Формирование концепции продукта и границ MVP (документ уровня Vision &amp; Scope, приоритизация по MoSCoW).</p>
+<p><strong>Этап 2. Дизайн  - 1 месяц</strong></p>
+<p>Разработка UX-UI дизайна сайта согласно пользовательским сценариям на основе результатов Discovery:</p>
+<ul>
+<li class="">
+<p>Создание прототипов ключевых экранов (лента, профиль репетитора, чат, оплата, админка).</p>
+</li>
+<li class="">
+<p>Создание индивидуального визуального стиля сайта.</p>
+</li>
+<li class="">
+<p>Согласование макетов с командой разработки.</p>
+</li>
+</ul>
+<p><strong>Этап 3. Разработка, тестирование (Delivery) - 4 месяца</strong></p>
+<ul>
+<li class="">
+<p>Реализация функционала категорий Must have и части Should have:
+регистрация и авторизация, лента видеовизиток с лайками, профили и бесплатные уроки, чат, оплата с холдированием, верификация документов, модерация и базовая админка, интеграция с платёжной системой и видеосервисом.</p>
+</li>
+<li class="">
+<p>Тестирование ключевых сценариев, устранение критичных ошибок.</p>
+</li>
+<li class="">
+<p>Настройка таргета, сбор базы потенциальных репетиторов, работа в профильных сообществах.</p>
+</li>
+<li class="">
+<p>Подготовка к запуску**:** прогрев аудитории, коммуникация с собранной базой.</p>
+</li>
+</ul>
+<p><strong>Этап 4. Запуск и первые уроки (после разработки)</strong></p>
+<ul>
+<li class="">
+<p>Подключение первых репетиторов и учеников.</p>
+</li>
+<li class="">
+<p>Проведение пилотных уроков, сбор первичных метрик и обратной связи.</p>
+</li>
+<li class="">
+<p>Анализ эффективности каналов привлечения.</p>
+</li>
+</ul>
+<p>Ограничение: при таком расписании в рамках 6 месяцев можно создать только MVP с заранее ограниченным функционалом.</p>
+<p><strong>Ресурсы:</strong></p>
+<ul>
+<li class="">Опишите ресурсы, которые необходимы для реализации проекта (например, люди, технологии, инструменты).</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="люди-команда"><strong>Люди (команда)</strong><a href="#люди-команда" class="hash-link" aria-label="Direct link to люди-команда" title="Direct link to люди-команда" translate="no">​</a></h4>
+<p>Основной состав:</p>
+<ul>
+<li class="">
+<p>Team Lead / Аналитик - архитектура проекта, интеграции, координация команды, аналитика</p>
+</li>
+<li class="">
+<p>Backend-разработчик - разработка API, базы данных, админки, интеграция с платежной системой и хранилищами</p>
+</li>
+<li class="">
+<p>Frontend-разработчик - разработка клиентской части: лента видео, профили, чат, личные кабинеты</p>
+</li>
+</ul>
+<p>Дополнительные роли (частичная занятость):</p>
+<ul>
+<li class="">
+<p>Дизайнер (UI/UX) - создание прототипов, визуального стиля (на этапе дизайна, 1-2 месяца)</p>
+</li>
+<li class="">
+<p>Маркетолог / Таргетолог - настройка рекламы в VK и Яндекс.Директе, привлечение первых репетиторов и учеников</p>
+</li>
+<li class="">
+<p>Юрист - регистрация юрлица, подготовка договоров, политики обработки персональных данных (разово)</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="технологии-и-инструменты">Технологии и инструменты<a href="#технологии-и-инструменты" class="hash-link" aria-label="Direct link to Технологии и инструменты" title="Direct link to Технологии и инструменты" translate="no">​</a></h4>
+<table><thead><tr><th>Категория</th><th>Инструмент</th><th>Комментарий</th></tr></thead><tbody><tr><td><strong>Облачная инфраструктура</strong></td><td><strong>Selectel</strong></td><td>Российский провайдер с грантовой программой: кешбэк 30% (до 1 млн руб). Тарифы: серверы от 292 руб/мес, S3 от 0,81 руб/ГБ</td></tr><tr><td><strong>Платежная система</strong></td><td><strong>ЮKassa</strong></td><td>Поддержка холдирования, комиссия 2-4%</td></tr><tr><td></td><td><strong>CloudPayments</strong></td><td>Холдирование, интеграция с онлайн-кассами</td></tr><tr><td></td><td><strong>Т-Pay</strong></td><td></td></tr><tr><td><strong>Видеочат</strong></td><td><strong>Яндекс Телемост</strong></td><td>Бесплатно, работает в браузере, есть API</td></tr><tr><td><strong>Управление проектами</strong></td><td><strong>YouGile</strong></td><td>Бесплатно до 10 человек, российский аналог Trello</td></tr><tr><td></td><td><strong>WEEEK</strong></td><td>Российский таск-менеджер с календарем и канбан-досками</td></tr><tr><td><strong>Дизайн</strong></td><td><strong>Figma</strong></td><td>Бесплатно для малых команд</td></tr><tr><td><strong>Схемы и диаграммы</strong></td><td><strong>Miro</strong></td><td>Бесплатно</td></tr><tr><td><strong>Мониторинг ошибок</strong></td><td><strong>Tracer от VK</strong></td><td>Российский аналог Sentry, бесплатно</td></tr><tr><td><strong>Аналитика</strong></td><td><strong>Яндекс.Метрика</strong></td><td>Бесплатно</td></tr><tr><td><strong>Хранение видео</strong></td><td><strong>Selectel S3</strong>/ <strong>Timeweb S3</strong></td><td>Российские S3-хранилища, совместимы с S3 API</td></tr></tbody></table>
+<p>Технические и бизнес‑ограничения:</p>
+<ul>
+<li class="">
+<p>Проект реализуется только как веб‑платформа, нативные мобильные приложения на этапе MVP не разрабатываются.</p>
+</li>
+<li class="">
+<p>Интерфейс первой версии выполняется на одном языке (русском), локализация на другие языки откладывается.</p>
+</li>
+<li class="">
+<p>Система опирается на внешние сервисы (платежи, видеосвязь). Есть ограничения по их API и условиям.</p>
+</li>
+<li class="">
+<p>Чтобы не выходить за границы проекта держим акцент на только Must/Should have, все дополнительные идеи фиксируем в бэклоге и рассматриваем только после достижения целей MVP.</p>
+</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--next" href="/tutortok/docs/requirements/functional"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Функциональные требования</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-описание-проблемы" class="table-of-contents__link toc-highlight"><strong>1. Описание проблемы</strong></a></li><li><a href="#2-целевая-аудитория" class="table-of-contents__link toc-highlight"><strong>2. Целевая аудитория</strong></a></li><li><a href="#3-стейкхолдеры" class="table-of-contents__link toc-highlight"><strong>3. Стейкхолдеры</strong></a></li><li><a href="#4-бизнес-цели-и-ключевые-метрики" class="table-of-contents__link toc-highlight"><strong>4. Бизнес-цели и ключевые метрики</strong></a></li><li><a href="#5-описание-продукта" class="table-of-contents__link toc-highlight"><strong>5. Описание продукта</strong></a></li><li><a href="#6-риски" class="table-of-contents__link toc-highlight"><strong>6. Риски</strong></a></li><li><a href="#7-основные-функции-продукта" class="table-of-contents__link toc-highlight">7. Основные функции продукта:</a></li><li><a href="#w---wont-have-не-будет" class="table-of-contents__link toc-highlight">W - Won&#39;t have (Не будет)</a></li><li><a href="#8-версии-продукта-и-план-развития" class="table-of-contents__link toc-highlight"><strong>8. Версии продукта и план развития</strong></a></li><li><a href="#9-ограничения" class="table-of-contents__link toc-highlight"><strong>9. Ограничения</strong></a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Документация</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/tutortok/docs/scope">Карточка сервиса</a></li><li class="footer__item"><a class="footer__link-item" href="/tutortok/docs/architecture/data-storage-tech">Архитектура</a></li><li class="footer__item"><a class="footer__link-item" href="/tutortok/docs/api/real">API Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Для авторов</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/alexandratsybenko/tutortok" target="_blank" rel="noopener noreferrer" class="footer__link-item">Репозиторий<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Tutortok. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-requirements/functional" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Функциональные требования | Tutortok</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://alexandratsybenko.github.io/tutortok/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://alexandratsybenko.github.io/tutortok/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://alexandratsybenko.github.io/tutortok/docs/requirements/functional"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Функциональные требования | Tutortok"><meta data-rh="true" name="description" content="1.1 Опишите ФТ к продукту из курсового проекта"><meta data-rh="true" property="og:description" content="1.1 Опишите ФТ к продукту из курсового проекта"><link data-rh="true" rel="icon" href="/tutortok/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://alexandratsybenko.github.io/tutortok/docs/requirements/functional"><link data-rh="true" rel="alternate" href="https://alexandratsybenko.github.io/tutortok/docs/requirements/functional" hreflang="en"><link data-rh="true" rel="alternate" href="https://alexandratsybenko.github.io/tutortok/docs/requirements/functional" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Функциональные требования","item":"https://alexandratsybenko.github.io/tutortok/docs/requirements/functional"}]}</script><script src="https://cdn.jsdelivr.net/npm/docusaurus-plugin-drawio/viewer.min.js"></script><link rel="stylesheet" href="/tutortok/assets/css/styles.adbcd96e.css">
+<script src="/tutortok/assets/js/runtime~main.4ef2833f.js" defer="defer"></script>
+<script src="/tutortok/assets/js/main.b5749c75.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/tutortok/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/tutortok/"><div class="navbar__logo"><img src="/tutortok/img/logo.svg" alt="Tutortok Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/tutortok/img/logo.svg" alt="Tutortok Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Tutortok</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/tutortok/docs/scope">Документация</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/tutortok/docs/api/real">API</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/alexandratsybenko/tutortok" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tutortok/docs/scope"><span title="Концепция и границы проекта" class="linkLabel_WmDU">Концепция и границы проекта</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/tutortok/docs/requirements/functional"><span title="Требования" class="categoryLinkLabel_W154">Требования</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/tutortok/docs/requirements/functional"><span title="Функциональные требования" class="linkLabel_WmDU">Функциональные требования</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tutortok/docs/requirements/non-functional"><span title="Нефункциональные требования" class="linkLabel_WmDU">Нефункциональные требования</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tutortok/docs/requirements/requirements-gathering"><span title="Сбор требований" class="linkLabel_WmDU">Сбор требований</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tutortok/docs/api/real"><span title="API" class="categoryLinkLabel_W154">API</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tutortok/docs/architecture/sequence-diagram"><span title="Архитектура" class="categoryLinkLabel_W154">Архитектура</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tutortok/docs/diagrams/use-case-diagram"><span title="Диаграммы" class="categoryLinkLabel_W154">Диаграммы</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tutortok/docs/erd"><span title="ERD-диаграммы" class="linkLabel_WmDU">ERD-диаграммы</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tutortok/docs/platform-strategy"><span title="Платформизация проекта" class="linkLabel_WmDU">Платформизация проекта</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/tutortok/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Требования</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Функциональные требования</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Функциональные требования</h1></header><p>#Функциональные требования</p>
+<p><strong>1.1 Опишите ФТ к продукту из курсового проекта</strong></p>
+<p>Так как в моем проекте планируется выпуск новых версий, на данный момент рассматриваться будут только функциональные требования для базовых функций MVP.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="блок-1-регистрация-и-управление-профилем"><strong>Блок 1: Регистрация и управление профилем</strong><a href="#блок-1-регистрация-и-управление-профилем" class="hash-link" aria-label="Direct link to блок-1-регистрация-и-управление-профилем" title="Direct link to блок-1-регистрация-и-управление-профилем" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-1-регистрация-нового-пользователя">UC-1: Регистрация нового пользователя<a href="#uc-1-регистрация-нового-пользователя" class="hash-link" aria-label="Direct link to UC-1: Регистрация нового пользователя" title="Direct link to UC-1: Регистрация нового пользователя" translate="no">​</a></h4>
+<table><thead><tr><th>Раздел</th><th>Описание</th></tr></thead><tbody><tr><td><strong>ID</strong></td><td>UC-1</td></tr><tr><td><strong>Название</strong></td><td>Регистрация нового пользователя</td></tr><tr><td><strong>Акторы</strong></td><td>- Пользователь (новый посетитель)</td></tr></tbody></table>
+<ul>
+<li class="">Система (веб-платформа)</li>
+<li class="">Email-сервис (внешний)|
+|<strong>Предусловия</strong>|- Пользователь открыл главную страницу платформы</li>
+<li class="">Пользователь нажал кнопку «Регистрация»</li>
+<li class="">Пользователь не авторизован в системе</li>
+<li class="">У пользователя есть доступ к email-ящику|
+|<strong>Основной поток</strong>|1. Пользователь выбирает, кем хочет зарегистрироваться:<!-- -->
+<ul>
+<li class="">«Я ученик» (role = student)</li>
+<li class="">«Я репетитор» (role = tutor)</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li class="">Пользователь заполняет форму регистрации:<!-- -->
+<ul>
+<li class="">Email (обязательное)</li>
+<li class="">Пароль (обязательное)</li>
+<li class="">Подтверждение пароля (обязательное)</li>
+<li class="">Чекбокс «Согласен с условиями обработки персональных данных» (обязательное)</li>
+</ul>
+</li>
+<li class="">Пользователь нажимает кнопку «Зарегистрироваться».</li>
+<li class="">Проверка необходимых условий:<!-- -->
+<ul>
+<li class="">Все поля заполнены корректно</li>
+<li class="">Пароль и подтверждение совпадают</li>
+<li class="">Пароль соответствует требованиям (≥ 8 символов, латиница, 0-9)</li>
+<li class="">Чекбокс согласия отмечен</li>
+<li class="">Email является уникальным (проверка в БД)</li>
+<li class="">Роль выбрана</li>
+</ul>
+</li>
+<li class="">Система хеширует пароль</li>
+<li class="">Система сохраняет в БД:<!-- -->
+<ul>
+<li class="">email,</li>
+<li class="">хеш пароля,</li>
+<li class="">роль (student или tutor),</li>
+<li class="">дату регистрации,</li>
+<li class="">статус email_verified = false.</li>
+</ul>
+</li>
+<li class="">Система генерирует уникальный токен для подтверждения email (срок действия 24 часа).</li>
+<li class="">Система отправляет запрос email-сервису на отправку письма со ссылкой подтверждения, содержащей токен.</li>
+<li class="">Система автоматически авторизует пользователя (создает сессию).</li>
+<li class="">Перенаправляет в зависимости от роли:<!-- -->
+<ul>
+<li class="">Если роль = student  - в ленту видеовизиток</li>
+<li class="">Если роль = tutor  - в профиль для заполнения анкеты</li>
+</ul>
+</li>
+<li class="">Система отображает уведомление: «Письмо для подтверждения email отправлено на почту».|
+|<strong>Постусловия (Успех)</strong>|- В системе создана новая учетная запись с выбранной ролью (ученик или репетитор)</li>
+</ol>
+<ul>
+<li class="">Пользователь автоматически авторизован</li>
+<li class="">В зависимости от роли:
+Ученик перенаправлен в ленту видеовизиток
+Репетитор перенаправлен в профиль для заполнения анкеты</li>
+<li class="">На указанный email отправлено письмо с подтверждением регистрации</li>
+<li class="">Статус email в системе - «не подтвержден»|
+|<strong>Постусловия (Неудача)</strong>|- Учетная запись НЕ создана</li>
+<li class="">Пользователь остается на странице регистрации</li>
+<li class="">Отображается сообщение об ошибке (email уже занят, пароль слишком короткий и т.д.)</li>
+<li class="">Введенные данные (кроме пароля) сохраняются в форме для повторной попытки|
+|<strong>Альтернативный поток 1:</strong>|<strong>Потеря интернет-соединения</strong>
+Точка входа: шаг 5
+5.1 Во время отправки данных происходит обрыв соединения.
+5.2 Система прерывает регистрацию.
+5.3 Отображается сообщение: «Отсутствует соединение с интернетом. Проверьте сеть и повторите попытку».
+5.4 Введенные данные сохраняются в форме.
+5.5 При восстановлении соединения пользователь может повторно нажать на «Зарегистрироваться»                                                                                          5.4 Use Case продолжается с шага 3|
+|<strong>Альтернативный поток 2:</strong>|<strong>Email уже зарегистрирован</strong>
+Точка входа: шаг 4
+4.1 Система обнаруживает, что email уже есть в БД.
+4.2 Регистрация прерывается.
+4.3 Отображается сообщение: «Этот email уже зарегистрирован».
+4.4 Пользователь может нажать «Войти» или «Восстановить пароль».
+4.5 Use Case завершен.|
+|<strong>Альтернативный поток 3:</strong>|<strong>Пароль не соответствует правилам</strong>
+Точка входа: шаг 4
+4.1 Система обнаруживает, что пароль &lt; 8 символов или содержит недопустимые символы.
+4.2 Регистрация прерывается.
+4.3 Отображается сообщение: «Пароль должен содержать не менее 8 символов (только латиница и 0-9)».
+4.4 Пользователь возвращается к шагу 2 для изменения пароля.|
+|<strong>Альтернативный поток 4:</strong>|<strong>Пароли не совпадают</strong>
+Точка входа: шаг 4
+4.1 Система обнаруживает, что пароль и подтверждение различаются.
+4.2 Регистрация прерывается.
+4.3 Отображается сообщение: «Пароли не совпадают».
+4.4 Пользователь возвращается к шагу 2.|
+|<strong>Альтернативный поток 5:</strong>|<strong>Не отмечен чекбокс согласия</strong>
+Точка входа: Шаг 4
+4.1 Система обнаруживает, что чекбокс не отмечен.
+4.2 Регистрация прерывается.
+4.3 Отображается сообщение: «Необходимо согласие на обработку персональных данных».
+4.4 Пользователь возвращается к шагу 2.|
+|<strong>Исключительный поток 1:</strong>|<strong>Email-сервис недоступен</strong>
+Точка входа: Шаг 8
+8.1 Система отправляет запрос в email-сервис, но получает ошибку (таймаут, сервис не отвечает).
+8.2 Система логирует ошибку.
+8.3 Регистрация НЕ отменяется - пользователь уже создан, авторизован и перенаправлен.
+8.4 Система сохраняет задачу на повторную отправку письма (через 15, 60 мин).
+8.5 Отображается уведомление: «Письмо для подтверждения не удалось отправить. Вы сможете запросить его повторно в профиле».                        8.6 Use Case завершается.|
+|<strong>Исключительный поток 2:</strong>|<strong>Ошибка базы данных</strong>
+Точка входа: Шаг 6
+6.1 При сохранении данных возникает ошибка БД.
+6.2 Система откатывает изменения (пользователь НЕ создан).
+6.3 Система логирует критическую ошибку.
+6.4 Отображается сообщение: «Техническая ошибка. Попробуйте позже».
+6.5 Use Case завершается.|
+|<strong>Бизнес-правила</strong>|BR-01: Один email может быть привязан только к одной учетной записи.
+BR-02: Пароль должен содержать не менее 8 символов и только латиницу (a-z, A-Z, 0-9).
+BR-03: Регистрация невозможна без подтверждения согласия с политикой обработки персональных данных.
+BR-04: Новый пользователь имеет статус email_verified = false до перехода по ссылке из письма.
+BR-05: Токен для подтверждения email действителен 24 часа.|</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-2-создание-и-редактирование-профиля-репетитора">UC-2: Создание и редактирование профиля репетитора<a href="#uc-2-создание-и-редактирование-профиля-репетитора" class="hash-link" aria-label="Direct link to UC-2: Создание и редактирование профиля репетитора" title="Direct link to UC-2: Создание и редактирование профиля репетитора" translate="no">​</a></h4>
+<table><thead><tr><th>Раздел</th><th>Описание</th></tr></thead><tbody><tr><td><strong>ID</strong></td><td>UC-2</td></tr><tr><td><strong>Название</strong></td><td>Создание и редактирование профиля репетитора</td></tr><tr><td><strong>Акторы</strong></td><td>- Репетитор (авторизованный пользователь)</td></tr></tbody></table>
+<ul>
+<li class="">Системa|
+|<strong>Предусловия</strong>|- Репетитор авторизован в системе</li>
+<li class="">Репетитор находится в своем профиле (личном кабинете)|
+|<strong>Основной поток</strong>|1. Репетитор переходит в раздел «Редактировать профиль».</li>
+</ul>
+<ol start="2">
+<li class="">Система открывает форму редактирования.</li>
+<li class="">Репетитор заполняет или изменяет поля:</li>
+</ol>
+<ul>
+<li class="">Имя (обязательное)</li>
+<li class="">Фото профиля (опционально) — если загружено, система проверяет формат (JPG, PNG) и размер (≤5 МБ)</li>
+<li class="">Предметы (один или несколько, обязательное)</li>
+<li class="">Уровни преподавания (A1-C2, можно несколько, обязательное)</li>
+<li class="">Стоимость урока (обязательное)</li>
+<li class="">Опыт работы (в годах, обязательное)</li>
+<li class="">Краткое описание (опционально)</li>
+<li class="">Образование (опционально)</li>
+<li class="">Цели обучения (разговорный, экзамены ЕГЭ/ОГЭ, работа, путешествия)</li>
+</ul>
+<ol start="4">
+<li class="">Репетитор нажимает кнопку «Сохранить».</li>
+<li class="">Система проверяет заполнение обязательных полей.</li>
+<li class="">Система сохраняет данные в БД.</li>
+<li class="">Система отображает сообщение: «Профиль успешно сохранен».|
+|<strong>Постусловия (Успех)</strong>|- Данные профиля обновлены в БД</li>
+</ol>
+<ul>
+<li class="">Новая информация отображается в профиле репетитора</li>
+<li class="">Изменения видны ученикам в ленте и профиле|
+|<strong>Постусловия (Неудача)</strong>|- Данные не сохранены</li>
+<li class="">Репетитор видит сообщение об ошибке</li>
+<li class="">Форма остается с введенными данными|
+|<strong>Альтернативный поток 1:</strong>|<strong>Не заполнены обязательные поля</strong>
+Точка входа: шаг 5
+5.1 Система обнаруживает, что не заполнено имя, предметы, уровни или стоимость.
+5.2 Сохранение прерывается.
+5.3 Незаполненные поля подсвечиваются.
+5.4 Отображается сообщение: «Заполните все поля».
+5.5 Репетитор возвращается к шагу 3 для заполнения обязательных полей.|
+|<strong>Альтернативный поток 2:</strong>|<strong>Потеря интернет-соединения</strong>
+Точка входа: шаг 5
+5.1 Во время отправки данных происходит обрыв соединения.
+5.2 Система прерывает сохранение.
+5.3 Отображается сообщение: «Отсутствует соединение с интернетом. Проверьте сеть и повторите попытку».
+5.4 Введенные данные сохраняются в форме.
+5.5 При восстановлении соединения пользователь может нажать «Сохранить» снова.
+5.6 Use Case возвращается к шагу 5.|
+|<strong>Исключительный поток 1:</strong>|<strong>Ошибка сохранения в БД</strong>
+Точка входа: шаг 6
+6.1 При сохранении данных возникает ошибка БД.
+6.2 Система логирует ошибку.
+6.3 Отображается сообщение: «Не удалось сохранить профиль. Попробуйте позже».
+6.4 Use Case завершен.|
+|<strong>Бизнес-правила</strong>|BR-06: Имя, предметы, уровни и стоимость урока — обязательные поля.
+BR-07: Репетитор может выбрать несколько предметов (до 3).
+BR-08: Репетитор может выбрать несколько уровней преподавания.
+BR-09: Стоимость урока должна быть положительным числом.
+BR-10: Профиль без видео-визитки не отображается в общей ленте (только в личном кабинете).|</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-3-верификация-документов-репетитора">UC-3: Верификация документов репетитора<a href="#uc-3-верификация-документов-репетитора" class="hash-link" aria-label="Direct link to UC-3: Верификация документов репетитора" title="Direct link to UC-3: Верификация документов репетитора" translate="no">​</a></h4>
+<table><thead><tr><th>Раздел</th><th>Описание</th></tr></thead><tbody><tr><td><strong>ID</strong></td><td>UC-3</td></tr><tr><td><strong>Название</strong></td><td>Верификация документов репетитора</td></tr><tr><td><strong>Акторы</strong></td><td>- Репетитор (авторизованный пользователь)</td></tr></tbody></table>
+<ul>
+<li class="">Система</li>
+<li class="">Администратор (для ручной проверки)|
+|<strong>Предусловия</strong>|- Репетитор авторизован в системе</li>
+<li class="">Репетитор заполнил профиль (имя, предметы и т.д.)</li>
+<li class="">Репетитор еще не прошел верификацию или предыдущая попытка была отклонена|
+|<strong>Основной поток</strong>|1. Репетитор переходит в раздел «Верификация» в личном кабинете.</li>
+</ul>
+<ol start="2">
+<li class="">Система отображает информацию о верификации и форму загрузки документов.</li>
+<li class="">Репетитор загружает фото или скан документа:<!-- -->
+<ul>
+<li class="">Паспорт (главный разворот с фото)</li>
+<li class="">Или другой документ, удостоверяющий личность</li>
+</ul>
+</li>
+<li class="">Система проверяет загруженный файл:<!-- -->
+<ul>
+<li class="">Формат: JPG, PNG, PDF</li>
+<li class="">Размер: не более 10 МБ</li>
+</ul>
+</li>
+<li class="">Репетитор нажимает кнопку «Отправить на проверку».</li>
+<li class="">Система сохраняет документ и создает заявку на верификацию со статусом «pending».</li>
+<li class="">Система отображает сообщение: «Документы отправлены на проверку. Обычно проверка занимает до 24 часов».</li>
+<li class="">Администратор получает уведомление о новой заявке, просматривает документы.</li>
+<li class="">
+<ul>
+<li class="">Если документы в порядке - нажимает «Подтвердить»</li>
+<li class="">Если есть проблемы - нажимает «Отклонить» и указывает причину</li>
+</ul>
+</li>
+<li class="">Система обновляет статус верификации:<!-- -->
+<ul>
+<li class="">При подтверждении: статус «verified», репетитор получает значок верификации</li>
+<li class="">При отклонении: статус «rejected», репетитор получает уведомление с причиной</li>
+</ul>
+</li>
+<li class="">Репетитор видит обновленный статус в разделе верификации.|
+|<strong>Постусловия (Неудача)</strong>|- Статус остался «pending» или «rejected»</li>
+</ol>
+<ul>
+<li class="">Репетитор может загрузить документы повторно|
+|<strong>Постусловия (Успех)</strong>|- Репетитор получил статус «verified»</li>
+<li class="">В профиле репетитора отображается значок верификации</li>
+<li class="">Репетитор может выводить средства и получать больше доверия от учеников|
+|<strong>Альтернативный поток 1:</strong>|<strong>Потеря интернет-соединения</strong>                                                                                        Точка входа: шаг 6                                                                                                       6.1 Во время отправки данных на сервер происходит обрыв соединения (таймаут, ошибка сети).
+6.2 Система прерывает процесс.
+6.3 Отображается сообщение: «Отсутствует соединение с интернетом. Проверьте сеть и повторите попытку».
+6.4 Файл, загруженный пользователем, остается в форме
+6.5 Кнопка «Отправить на проверку» становится активной.
+6.6 Пользователь нажимает кнопку «Отправить на проверку» - система возвращается к шагу 5|
+|<strong>Альтернативный поток 2:</strong>|<strong>Превышение размера файла</strong>
+Точка входа: шаг 4
+4.1 Система определяет, что размер файла превышает 10 МБ.
+4.2 Отображается сообщение: «Размер файла не должен превышать 10 МБ».
+4.3 Пользователь может заменить файл и вернуться к шагу 3|
+|<strong>Исключительный поток 1</strong>|<strong>Ошибка сохранения в БД</strong>
+Точка входа: шаг 6
+6.1 При сохранении данных возникает ошибка БД.
+6.2 Система логирует ошибку.
+6.3 Отображается сообщение: «Не удалось сохранить документ. Попробуйте позже».
+6.4 Use Case завершен.|
+|<strong>Бизнес-правила</strong>|BR-01: Верификация обязательна для вывода средств и получения значка доверия.
+BR-02: Репетитор может загружать только один документ за раз.
+BR-03: Документы хранятся в защищенном хранилище, доступном только администраторам.
+BR-04: Проверка документов производится вручную администратором.
+BR-05: Максимальное количество попыток верификации - 3
+BR-06: Значок верификации отображается в профиле и в ленте рядом с именем репетитора.|</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="блок-2-управление-видеоконтентом">Блок 2: Управление видеоконтентом<a href="#блок-2-управление-видеоконтентом" class="hash-link" aria-label="Direct link to Блок 2: Управление видеоконтентом" title="Direct link to Блок 2: Управление видеоконтентом" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-4-загрузка-видео-визитки-репетитором">UC-4: Загрузка видео-визитки репетитором<a href="#uc-4-загрузка-видео-визитки-репетитором" class="hash-link" aria-label="Direct link to UC-4: Загрузка видео-визитки репетитором" title="Direct link to UC-4: Загрузка видео-визитки репетитором" translate="no">​</a></h4>
+<table><thead><tr><th>Раздел</th><th>Описание</th></tr></thead><tbody><tr><td><strong>ID</strong></td><td>UC-4</td></tr><tr><td><strong>Название</strong></td><td>Загрузка видео-визитки репетитором</td></tr><tr><td><strong>Акторы</strong></td><td>- Репетитор (авторизованный пользователь)</td></tr></tbody></table>
+<ul>
+<li class="">Системa (веб-платформа)</li>
+<li class="">Облачное хранилище|
+|<strong>Предусловия</strong>|- Репетитор авторизован в системе</li>
+<li class="">Репетитор находится в режиме редактирования своего профиля</li>
+<li class="">Видео-визитка может отсутствовать либо заменяться новой|
+|<strong>Основной поток</strong>|1. Репетитор нажимает кнопку «Загрузить видеовизитку» в режиме редактирования профиля.</li>
+</ul>
+<ol start="2">
+<li class="">Система открывает диалог выбора файла на устройстве пользователя.</li>
+<li class="">Репетитор выбирает видеофайл и подтверждает выбор.</li>
+<li class="">Система выполняет валидацию файла:</li>
+</ol>
+<ul>
+<li class="">Формат: только MP4 или MOV</li>
+<li class="">Размер: не более 50 МБ</li>
+<li class="">Длительность: от 15 до 60 секунд (проверяется после полной загрузки)</li>
+</ul>
+<ol start="5">
+<li class="">Если валидация пройдена, система начинает загрузку файла на сервер с отображением прогресса.</li>
+<li class="">После завершения загрузки система сохраняет файл во временное хранилище.</li>
+<li class="">Система запускает фоновую обработку видео:</li>
+</ol>
+<ul>
+<li class="">Сжатие и оптимизация для быстрого воспроизведения</li>
+</ul>
+<ol start="8">
+<li class="">Система сохраняет обработанное видео и превью в постоянное облачное хранилище.</li>
+<li class="">Система обновляет профиль репетитора: добавляет ссылку на видео и превью.</li>
+<li class="">Система отмечает, что модерация видео требуется (статус moderation_status = pending).</li>
+<li class="">Система отображает сообщение об успехе и показывает превью видео в профиле.</li>
+<li class="">Система уведомляет администратора о новом видео на модерацию|
+|<strong>Постусловия (Успех)</strong>|- Видео-визитка загружена, обработана и сохранена в облачном хранилище</li>
+</ol>
+<ul>
+<li class="">В профиле репетитора обновлена ссылка на видео</li>
+<li class="">Видео отображается в ленте у учеников</li>
+<li class="">Репетитор видит превью видео в своем профиле|
+|<strong>Постусловия (Неудача)</strong>|- Видео НЕ загружено</li>
+<li class="">Профиль репетитора остается без изменений</li>
+<li class="">Отображается сообщение об ошибке</li>
+<li class="">Репетитор может повторить попытку|
+|<strong>Альтернативный поток 1:</strong>|<strong>Потеря интернет-соединения во время загрузки</strong>
+Точка входа: шаг 5
+5.1 Во время загрузки файла на сервер происходит обрыв соединения (таймаут, ошибка сети).
+5.2 Система прерывает загрузку.
+5.3 Отображается сообщение: «Отсутствует соединение с интернетом. Проверьте сеть и повторите попытку».
+5.4 Кнопка «Загрузить» становится активной.
+5.5 При восстановлении соединения пользователь может нажать «Загрузить» снова - система возвращается к шагу 5.|
+|<strong>Альтернативный поток 2:</strong>|<strong>Превышение размера файла</strong>
+Точка входа: шаг 4
+4.1 Система определяет, что размер файла превышает 50 МБ.
+4.2 Загрузка прерывается.
+4.3 Отображается сообщение: «Размер видео не должен превышать 50 МБ».
+4.4 Пользователь может выбрать другой файл и вернуться к шагу 3.|
+|<strong>Альтернативный поток 3:</strong>|<strong>Некорректная длительность видео</strong>
+Точка входа: шаг 4
+4.1 Система определяет, что длительность видео меньше 15 секунд или больше 60 секунд.
+4.2 Загрузка прерывается.
+4.3 Отображается сообщение: «Длительность видео должна быть от 15 до 60 секунд».
+4.4 Пользователь может выбрать другой файл и вернуться к шагу 3.|
+|<strong>Исключительный поток 1:</strong>|<strong>Ошибка сохранения в облачное хранилище</strong>
+Точка входа: шаг 8
+8.1 При сохранении обработанного видео в облачное хранилище возникает ошибка (сервис недоступен, превышение лимитов).
+8.2 Система логирует критическую ошибку.
+8.3 Отображается сообщение: «Техническая ошибка. Попробуйте позже».
+8.4 Временные файлы удаляются.
+8.5 Use Case завершен.|
+|<strong>Исключительный поток 2:</strong>|<strong>Ошибка базы данных</strong>
+Точка входа: шаг 9
+9.1 При обновлении профиля возникает ошибка БД.
+9.2 Система логирует критическую ошибку.
+9.3 Видео уже сохранено в облаке, но профиль не обновлен.
+9.4 Отображается сообщение: «Техническая ошибка. Обратитесь в поддержку».
+9.5 Use Case завершен.|
+|<strong>Бизнес-правила</strong>|BR-01: Видео-визитка обязательна для публикации профиля репетитора в ленте.
+BR-02: Допустимые форматы: MP4, MOV.
+BR-03: Максимальный размер файла: 50 МБ.
+BR-04: Длительность видео: от 15 до 60 секунд.
+BR-05: Все видео проходят модерацию перед публикацией в общей ленте.|</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-5-загрузка-бесплатных-уроков-репетитором">UC-5: Загрузка бесплатных уроков репетитором<a href="#uc-5-загрузка-бесплатных-уроков-репетитором" class="hash-link" aria-label="Direct link to UC-5: Загрузка бесплатных уроков репетитором" title="Direct link to UC-5: Загрузка бесплатных уроков репетитором" translate="no">​</a></h4>
+<table><thead><tr><th>Раздел</th><th>Описание</th></tr></thead><tbody><tr><td><strong>ID</strong></td><td>UC-5</td></tr><tr><td><strong>Название</strong></td><td>Загрузка бесплатных уроков репетитором</td></tr><tr><td><strong>Акторы</strong></td><td>- Репетитор (авторизованный пользователь)</td></tr></tbody></table>
+<ul>
+<li class="">Система</li>
+<li class="">Video Service (сервис хранения и доставки видео)|
+|<strong>Предусловия</strong>|- Репетитор авторизован в системе</li>
+<li class="">Репетитор находится в режиме редактирования своего профиля</li>
+<li class="">Количество уже загруженных уроков меньше максимального (например, 5)|
+|<strong>Основной поток</strong>|1. Репетитор нажимает кнопку «Загрузить бесплатный урок» в разделе управления контентом профиля.</li>
+</ul>
+<ol start="2">
+<li class="">Система открывает форму загрузки с полями:<!-- -->
+<ul>
+<li class="">Название урока (обязательное)</li>
+<li class="">Краткое описание (опционально)</li>
+<li class="">Выбор файла видео (обязательное)</li>
+</ul>
+</li>
+<li class="">Репетитор заполняет поля и выбирает видеофайл на своем устройстве.</li>
+<li class="">Репетитор нажимает кнопку «Загрузить».</li>
+<li class="">Система выполняет валидацию файла:<!-- -->
+<ul>
+<li class="">Формат: MP4, MOV</li>
+<li class="">Размер: не более 200 МБ</li>
+<li class="">Длительность: от 3 до 30 минут</li>
+</ul>
+</li>
+<li class="">Если валидация пройдена, система начинает загрузку файла с отображением прогресса.</li>
+<li class="">После завершения загрузки система сохраняет файл во временное хранилище.</li>
+<li class="">Система запускает фоновую обработку видео (Сжатие и оптимизация)</li>
+<li class="">Система сохраняет обработанное видео в Video Service.</li>
+<li class="">Система создает запись о уроке в БД:<!-- -->
+<ul>
+<li class="">tutor_id</li>
+<li class="">название</li>
+<li class="">описание</li>
+<li class="">ссылка на видео</li>
+<li class="">ссылка на превью</li>
+<li class="">статус moderation = pending</li>
+<li class="">дата загрузки</li>
+</ul>
+</li>
+<li class="">Система отображает сообщение об успехе.</li>
+<li class="">Новый урок появляется в списке бесплатных уроков репетитора со статусом «На модерации».|
+|<strong>Постусловия (Успех)</strong>|- Бесплатный урок загружен и отправлен на модерацию</li>
+</ol>
+<ul>
+<li class="">Репетитор видит урок в своем профиле со статусом «На модерации»</li>
+<li class="">После модерации урок станет доступен ученикам|
+|<strong>Постусловия (Неудача)</strong>|- Урок не загружен</li>
+<li class="">Репетитор видит сообщение об ошибке</li>
+<li class="">Данные не сохраняются|
+|<strong>Альтернативный поток 1:</strong>|<strong>Потеря интернет-соединения</strong>                                                                            Точка входа: шаг 7                                                                                                    7.1 Во время отправки данных на сервер происходит обрыв соединения (таймаут, ошибка сети).
+7.2 Система прерывает процесс.
+7.3 Отображается сообщение: «Отсутствует соединение с интернетом. Проверьте сеть и повторите попытку».
+7.4 Файл, загруженный пользователем, остается в форме
+7.5 Кнопка «Загрузить» становится активной.
+7.6 Система возвращается к шагу 4|
+|<strong>Альтернативный поток 2:</strong>|<strong>Достигнут лимит уроков</strong>
+Точка входа: Шаг 1
+1.1 Система проверяет количество уроков репетитора.
+1.2 Достигнут максимум (например, 5).
+1.3 Кнопка «Загрузить урок» неактивна или скрыта.
+1.4 Отображается сообщение: «Вы загрузили максимальное количество бесплатных уроков».
+1.5 Use Case завершен.|
+|<strong>Альтернативный поток 3:</strong>|<strong>Превышение размера файла</strong>
+Точка входа: Шаг 5
+5.1 Система определяет, что размер файла превышает 200 МБ.
+5.2 Загрузка прерывается.
+5.3 Отображается сообщение: «Размер видео не должен превышать 200 МБ».
+5.4 Пользователь может вернуться к шагу 3 и выбрать корректное видео|
+|<strong>Альтернативный поток 4:</strong>|<strong>Некорректная длительность</strong>
+Точка входа**:** Шаг 5
+5.1 Система определяет, что длительность видео меньше 3 минут или больше 30 минут.
+5.2 Загрузка прерывается.
+5.3 Отображается сообщение: «Длительность видео должна быть от 3 до 30 минут».
+5.4 Пользователь может вернуться к шагу 3 и выбрать корректное видео|
+|<strong>Исключительный поток 1:</strong>|<strong>Ошибка загрузки на сервер</strong>
+Точка входа: Шаг 6
+6.1 Во время загрузки происходит обрыв соединения или таймаут.
+6.2 Система прерывает загрузку.
+6.3 Отображается сообщение: «Ошибка загрузки. Проверьте соединение».
+6.4 Use Case завершен.|
+|<strong>Исключительный поток 2:</strong>|<strong>Ошибка сохранения в Video Service</strong>
+Точка входа: Шаг 9
+9.1 При сохранении видео возникает ошибка.
+9.2 Система логирует критическую ошибку.
+9.3 Отображается сообщение: «Техническая ошибка. Попробуйте позже».
+9.4 Use Case завершен.|
+|<strong>Бизнес-правила</strong>|BR-01: Максимальное количество бесплатных уроков - 5 на одного репетитора.
+BR-02: Допустимые форматы: MP4, MOV.
+BR-03: Максимальный размер файла: 200 МБ.
+BR-04: Длительность видео: от 3 до 30 минут.
+BR-05: Все бесплатные уроки проходят модерацию перед публикацией.
+BR-06: Уроки со статусом pending (не прошли модерацию) не видны ученикам.|</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="блок-3-поиск-и-взаимодействие-ученик">Блок 3: Поиск и взаимодействие (ученик)<a href="#блок-3-поиск-и-взаимодействие-ученик" class="hash-link" aria-label="Direct link to Блок 3: Поиск и взаимодействие (ученик)" title="Direct link to Блок 3: Поиск и взаимодействие (ученик)" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-6-просмотр-ленты-видео-визиток-учеником"><strong>UC-6: Просмотр ленты видео-визиток учеником</strong><a href="#uc-6-просмотр-ленты-видео-визиток-учеником" class="hash-link" aria-label="Direct link to uc-6-просмотр-ленты-видео-визиток-учеником" title="Direct link to uc-6-просмотр-ленты-видео-визиток-учеником" translate="no">​</a></h4>
+<table><thead><tr><th>Раздел</th><th>Описание</th></tr></thead><tbody><tr><td><strong>ID</strong></td><td>UC-6</td></tr><tr><td><strong>Название</strong></td><td>Просмотр ленты видео-визиток учеником</td></tr><tr><td><strong>Акторы</strong></td><td>- Ученик (авторизованный пользователь)</td></tr></tbody></table>
+<ul>
+<li class="">Система (веб-платформа)</li>
+<li class="">Video Service (сервис хранения и доставки видео)|
+|<strong>Предусловия</strong>|- Ученик авторизован в системе</li>
+<li class="">Ученик находится на главном экране (лента видеовизиток)</li>
+<li class="">В системе есть хотя бы одно видео, прошедшее модерацию |
+|<strong>Основной поток</strong>|1. Ученик открывает главную страницу (раздел &quot;Лента&quot;)</li>
+</ul>
+<ol start="2">
+<li class="">Система запрашивает у БД список репетиторов с видео, прошедшими модерацию (status = approved).</li>
+<li class="">Система загружает первые 10 видео</li>
+<li class="">Система запрашивает видеофайлы у Video Service.</li>
+<li class="">Система отображает вертикальную ленту, где каждое видео занимает весь экран.</li>
+<li class="">Для каждого видео отображается:<!-- -->
+<ul>
+<li class="">Видео (превью или начало воспроизведения)</li>
+<li class="">Имя репетитора</li>
+<li class="">Предмет</li>
+<li class="">Кнопка лайка</li>
+<li class="">Кнопка перехода в профиль</li>
+</ul>
+</li>
+<li class="">При загрузке ленты первое видео начинает воспроизводиться автоматически.</li>
+<li class="">При прокрутке видео, которое появляется в области видимости, начинает воспроизводиться автоматически.</li>
+<li class="">Видео, которое уходит из области видимости, ставится на паузу.</li>
+<li class="">При нажатии на область видео звук включается/отключается.</li>
+<li class="">Ученик может поставить лайк, нажав на иконку сердца (лайк меняет цвет, счетчик увеличивается).</li>
+<li class="">Ученик может перейти в профиль репетитора, нажав на имя или кнопку «Подробнее».</li>
+<li class="">Когда ученик пролистывает до 3-го видео с конца, система автоматически запрашивает следующие 5 видео.</li>
+<li class="">Новые видео добавляются в конец ленты.|
+|<strong>Постусловия (Успех)</strong>|- Ученик видит ленту с вертикальными видео</li>
+</ol>
+<ul>
+<li class="">Видео автоматически воспроизводятся при прокрутке</li>
+<li class="">Ученик может листать видео вверх/вниз</li>
+<li class="">Ученик может поставить лайк понравившемуся видео</li>
+<li class="">Ученик может перейти в профиль репетитора|
+|<strong>Постусловия (Неудача)</strong>|- Отображается сообщение об ошибке|
+|<strong>Альтернативный поток 1:</strong>|<strong>Потеря интернет-соединения</strong>                                                                          Точка входа: шаг 4                                                                                                   4.1 Во время запроса данных происходит обрыв соединения (таймаут, ошибка сети).
+4.2 Система прерывает процесс.
+4.3 Отображается сообщение: «Отсутствует соединение с интернетом. Проверьте сеть и повторите попытку».
+4.4 Кнопка «Повторить»
+4.5 Система возвращается к шагу 2|
+|<strong>Альтернативный поток 2:</strong>|<strong>Нет видео для отображения</strong>
+Точка входа: шаг 2 или 13
+2.1 Система не находит видео, прошедших модерацию.
+2.2 Отображается заглушка: «Пока нет видео. Зайдите позже».
+2.3 Use Case завершается.|
+|<strong>Исключительный поток 1:</strong>|<strong>Сервер недоступен</strong>
+Точка входа: шаг 2
+2.1 Система не может получить данные от сервера (ошибка 5xx, таймаут).
+2.2 Отображается сообщение: «Не удалось загрузить ленту. Проверьте соединение».
+2.3 Кнопка «Повторить». 2.4 Use Case завершается.|
+|<strong>Исключительный поток 2:</strong>|<strong>Ошибка загрузки видео из Video Service</strong>
+Точка входа: шаг 4
+4.1 Video Service не отвечает или возвращает ошибку.
+4.2 Система логирует ошибку.
+4.3 Отображается сообщение: «Не удалось загрузить видео. Попробуйте позже».
+4.4 Use Case завершается.|
+|<strong>Бизнес-правила</strong>|BR-01: В ленте отображаются только видео со статусом moderation_status = approved.
+BR-02: Видео отображаются в порядке, определенном алгоритмом
+BR-03: Система подгружает следующие видео автоматически при приближении к концу ленты.
+BR-04: Один ученик может поставить только один лайк одному видео (повторный лайк отменяет предыдущий). |</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-7-применение-фильтров-к-ленте-видеовизиток">UC-7: Применение фильтров к ленте видеовизиток<a href="#uc-7-применение-фильтров-к-ленте-видеовизиток" class="hash-link" aria-label="Direct link to UC-7: Применение фильтров к ленте видеовизиток" title="Direct link to UC-7: Применение фильтров к ленте видеовизиток" translate="no">​</a></h4>
+<table><thead><tr><th>Раздел</th><th>Описание</th><th></th></tr></thead><tbody><tr><td><strong>ID</strong></td><td>UC-7</td><td></td></tr><tr><td><strong>Название</strong></td><td>Применение фильтров к ленте видеовизиток</td><td></td></tr><tr><td><strong>Акторы</strong></td><td>- Ученик (авторизованный пользователь)</td><td></td></tr></tbody></table>
+<ul>
+<li class="">Система||
+|<strong>Предусловия</strong>|- Ученик авторизован в системе</li>
+<li class="">Ученик находится на главном экране (раздел &quot;Лента&quot;)</li>
+<li class="">В ленте загружены видео, прошедшие модерацию||
+|<strong>Основной поток</strong>|1. Ученик нажимает на иконку фильтра в интерфейсе ленты.</li>
+</ul>
+<ol start="2">
+<li class="">Система открывает панель фильтров с доступными опциями:<!-- -->
+<ul>
+<li class="">По предмету</li>
+<li class="">По уровню языка (A1 - C2)</li>
+<li class="">По цене за урок (ползунок: от и до)</li>
+<li class="">По опыту (до 1 года, 1-3 года, 3-5 лет, 5+ лет)</li>
+<li class="">По цели обучения (разговорный, для экзаменов, для работы, для путешествий)</li>
+</ul>
+</li>
+<li class="">Ученик выбирает нужные значения фильтров:<!-- -->
+<ul>
+<li class="">Можно выбрать несколько предметов</li>
+<li class="">Можно выбрать несколько уровней</li>
+<li class="">Цена задается диапазоном</li>
+<li class="">Опыт- один вариант</li>
+<li class="">Цель - один или несколько вариантов</li>
+</ul>
+</li>
+<li class="">Ученик нажимает кнопку «Применить».</li>
+<li class="">Система отправляет запрос к БД с параметрами выбранных фильтров.</li>
+<li class="">Система получает список репетиторов и их видео, соответствующих фильтрам.</li>
+<li class="">Система обновляет ленту, отображает первые 10</li>
+<li class="">Ученик может сбросить все фильтры, нажав кнопку &quot;Сбросить&quot;.<!-- -->
+<ul>
+<li class="">Лента возвращается к исходному состоянию (без фильтров).||
+|<strong>Постусловия (Успех)</strong>|- Лента обновлена в соответствии с выбранными фильтрами</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li class="">Ученик видит только тех репетиторов, которые подходят под критерии||
+|<strong>Постусловия (Неудача)</strong>|- Лента не обновляется</li>
+<li class="">Фильтры сбрасываются к предыдущим значениям</li>
+<li class="">Отображается сообщение об ошибке||
+|<strong>Альтерантивный поток 1:</strong>|<strong>Потеря интернет-соединения</strong>                                                                            Точка входа: шаг 5                                                                                                  5.1 Во время запроса  данных происходит обрыв соединения (таймаут, ошибка сети).
+5.2 Система прерывает процесс.
+5.3 Отображается сообщение: «Отсутствует соединение с интернетом. Проверьте сеть и повторите попытку».
+5.4 Кнопка «Применить» становится активной
+5.5 Система возвращается к шагу 4||
+|<strong>Альтернативный поток 2:</strong>|<strong>Ничего не найдено</strong>
+Точка входа: Шаг 6
+6.1 Система не находит видео, соответствующих фильтрам.
+6.2 Отображается сообщение: «Ничего не найдено. Попробуйте изменить фильтры».
+6.3 Пользователь переходит к шагу 3 ||
+|<strong>Исключительный поток 1:</strong>|<strong>Ошибка сервера</strong>
+Точка входа: Шаг 5
+5.1 Система не может получить данные от сервера (ошибка 5xx, таймаут).
+5.2 Отображается сообщение: «Не удалось применить фильтры. Попробуйте позже».
+5.3 Фильтры сбрасываются к предыдущим значениям.
+5.4 Use Case завершен.||
+|<strong>Бизнес-правила</strong>|BR-01: Фильтры определяются на основе данных, которые заполнили репетиторы в профиле.
+BR-02: Фильтры работают по логике И: должны выполняться все выбранные условия.
+BR-03: Предметы и уровни работают по логике ИЛИ внутри себя.
+BR-04: Диапазон цен учитывает стоимость урока, указанную репетитором.
+BR-05: Фильтры действуют только в текущей сессии (после перезагрузки сбрасываются).||</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-8-просмотр-бесплатных-уроков-в-профиле-репетитора">UC-8: Просмотр бесплатных уроков в профиле репетитора<a href="#uc-8-просмотр-бесплатных-уроков-в-профиле-репетитора" class="hash-link" aria-label="Direct link to UC-8: Просмотр бесплатных уроков в профиле репетитора" title="Direct link to UC-8: Просмотр бесплатных уроков в профиле репетитора" translate="no">​</a></h4>
+<table><thead><tr><th>Раздел</th><th>Описание</th></tr></thead><tbody><tr><td><strong>ID</strong></td><td>UC-8</td></tr><tr><td><strong>Название</strong></td><td>Просмотр бесплатных уроков в профиле репетитора</td></tr><tr><td><strong>Акторы</strong></td><td>-Ученик (авторизованный пользователь)</td></tr><tr><td>-Система</td><td></td></tr></tbody></table>
+<ul>
+<li class="">Video Service (сервис хранения и доставки видео)|
+|<strong>Предусловия</strong>|- Ученик авторизован в системе</li>
+<li class="">Ученик находится в профиле репетитора</li>
+<li class="">Репетитор загрузил хотя бы один бесплатный урок |
+|<strong>Основной поток</strong>|1. Ученик открывает профиль репетитора.</li>
+</ul>
+<ol start="2">
+<li class="">Система отображает профиль, включая блок «Бесплатные уроки».</li>
+<li class="">В блоке отображаются превью доступных бесплатных уроков (обложка, название, длительность).</li>
+<li class="">Ученик нажимает на превью выбранного урока.</li>
+<li class="">Система открывает плеер с видеоуроком.</li>
+<li class="">Система запрашивает видеофайл у Video Service.</li>
+<li class="">Видео начинает воспроизводиться.</li>
+<li class="">Ученик может:
+-Поставить видео на паузу/возобновить</li>
+</ol>
+<ul>
+<li class="">Перемотать видео</li>
+<li class="">Включить/выключить звук</li>
+<li class="">Развернуть на весь экран</li>
+<li class="">Закрыть плеер и вернуться к профилю|
+|<strong>Постусловия (Успех)</strong>|- Ученик посмотрел бесплатный урок</li>
+<li class="">Ученик может принять решение о совместимости с репетитором|
+|<strong>Постусловия (Неудача)</strong>|- Видео не воспроизвелось</li>
+<li class="">Ученик видит сообщение об ошибке|
+|<strong>Альтернативный поток 1:</strong>|<strong>Потеря интернет-соединения</strong>                                                                    Точка входа: шаг 6                                                                                          6.1 Во время запроса  данных происходит обрыв соединения (таймаут, ошибка сети).
+6.2 Система прерывает процесс.
+6.3 Отображается сообщение: «Отсутствует соединение с интернетом. Проверьте сеть и повторите попытку».
+6.4 Кнопка «Повторить»
+6.5 Система возвращается к шагу 5|
+|<strong>Альтернативный поток 2:</strong>|<strong>Нет бесплатных уроков</strong>
+Точка входа: Шаг 2
+2.1 Система проверяет и не находит загруженных уроков.
+2.2 Блок «Бесплатные уроки» не отображается в профиле.
+2.3 Use Case завершен.|
+|<strong>Исключительный поток 1:</strong>|<strong>Ошибка видеоплеера
+Точка входа:</strong> Шаг 7
+7.1 При воспроизведении возникает ошибка
+7.2 Система логирует ошибку.
+7.3 Отображается сообщение: «Ошибка воспроизведения видео».
+7.4 Use Case завершен.|
+|<strong>Бизнес-правила</strong>|BR-01: В профиле отображаются только бесплатные уроки со статусом moderation = approved (прошли модерацию).
+BR-02: Ученик не может скачивать видео (только просмотр в плеере).
+BR-03: Репетитор может загрузить не более 5 бесплатных уроков (ограничение платформы).
+BR-04: Просмотры бесплатных уроков учитываются в статистике репетитора.|</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-9-общение-в-чате-между-учеником-и-репетитором">UC-9: Общение в чате между учеником и репетитором<a href="#uc-9-общение-в-чате-между-учеником-и-репетитором" class="hash-link" aria-label="Direct link to UC-9: Общение в чате между учеником и репетитором" title="Direct link to UC-9: Общение в чате между учеником и репетитором" translate="no">​</a></h4>
+<table><thead><tr><th>Раздел</th><th>Описание</th></tr></thead><tbody><tr><td><strong>ID</strong></td><td>UC-9</td></tr><tr><td><strong>Название</strong></td><td>Общение в чате между учеником и репетитором</td></tr><tr><td><strong>Акторы</strong></td><td>- Ученик (авторизованный)</td></tr></tbody></table>
+<ul>
+<li class="">Репетитор (авторизованный)</li>
+<li class="">Система|
+|<strong>Предусловия</strong>|- Оба пользователя авторизованы</li>
+<li class="">Ученик находится в профиле репетитора (для начала чата)</li>
+<li class="">Репетитор открыл список чатов (для ответа)</li>
+<li class="">Репетитор активен (не заблокирован)|
+|<strong>Основной поток</strong>|1. Начало чата (только ученик):
+****   - Ученик нажимает «Написать сообщение» в профиле репетитора<!-- -->
+<ul>
+<li class="">Система создает новый чат (если его еще нет)</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li class="">Ответ в чате (ученик или репетитор):
+****   - Пользователь открывает существующий чат из списка диалогов<!-- -->
+<ul>
+<li class="">Система загружает историю сообщений</li>
+</ul>
+</li>
+<li class="">Пользователь вводит текст в поле ввода (макс. 2000 символов).</li>
+<li class="">Пользователь нажимает кнопку «Отправить».</li>
+<li class="">Система сохраняет сообщение в БД:<!-- -->
+<ul>
+<li class="">chat_id, sender_id, receiver_id, текст, timestamp, статус &quot;не прочитано&quot;</li>
+</ul>
+</li>
+<li class="">Система отображает сообщение в интерфейсе чата у отправителя.</li>
+<li class="">Система доставляет сообщение получателю</li>
+<li class="">Получатель видит новое сообщение, счетчик непрочитанных обновляется.|
+|<strong>Постусловия (Успех)</strong>|- Сообщение отправлено и сохранено</li>
+</ol>
+<ul>
+<li class="">Получатель видит новое сообщение (если онлайн)</li>
+<li class="">История сообщений обновлена у обоих|
+|<strong>Постусловия (Неудача)</strong>|- Сообщение не отправлено</li>
+<li class="">Отправитель видит сообщение об ошибке|
+|<strong>Альтернативный поток 1:</strong>|<strong>Потеря интернет-соединения</strong>                                                                    Точка входа: шаг 5                                                                                        5.1 Во время отправки данных происходит обрыв соединения (таймаут, ошибка сети).
+5.2 Система прерывает процесс.
+5.3 Отображается сообщение: «Отсутствует соединение с интернетом. Проверьте сеть и повторите попытку».
+5.4 Кнопка «Отправить» становится активной
+5.5 Система возвращается к шагу 4|
+|<strong>Исключительный поток 1:</strong>|<strong>Ошибка сохранения в БД</strong>
+Точка входа: Шаг 5
+5.1 При сохранении сообщения ошибка БД.
+5.2 Система логирует ошибку.
+5.3 Отображается сообщение: «Не удалось отправить. Попробуйте позже».                                                                                                            5.4 User Case завершен.|
+|<strong>Бизнес-правила</strong>|BR-01: Только участники чата видят переписку.
+BR-02: Максимум 2000 символов на сообщение.
+BR-03: История сообщений хранится в БД.
+BR-04: Чат всегда инициируется учеником (репетитор только отвечает)
+BR-05: Непрочитанные сообщения считаются отдельно для каждого пользователя.|</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="блок-4-финансы">Блок 4: Финансы<a href="#блок-4-финансы" class="hash-link" aria-label="Direct link to Блок 4: Финансы" title="Direct link to Блок 4: Финансы" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-10-оплата-урока-учеником">UC-10: Оплата урока учеником<a href="#uc-10-оплата-урока-учеником" class="hash-link" aria-label="Direct link to UC-10: Оплата урока учеником" title="Direct link to UC-10: Оплата урока учеником" translate="no">​</a></h4>
+<table><thead><tr><th>Раздел</th><th>Описание</th></tr></thead><tbody><tr><td><strong>ID</strong></td><td>UC-10</td></tr><tr><td><strong>Название</strong></td><td>Оплата урока учеником</td></tr><tr><td><strong>Акторы</strong></td><td>- Ученик (авторизованный пользователь)</td></tr></tbody></table>
+<ul>
+<li class="">Репетитор (авторизованный пользователь)</li>
+<li class="">Система</li>
+<li class="">Платежный шлюз|
+|<strong>Предусловия</strong>|- Ученик авторизован в системе</li>
+<li class="">Ученик и репетитор договорились о времени урока в чате</li>
+<li class="">У репетитора указана стоимость урока в профиле</li>
+<li class="">Ученик находится в чате с репетитором|
+|<strong>Основной поток</strong>|1. Ученик нажимает кнопку «Оплатить урок» в интерфейсе чата.</li>
+</ul>
+<ol start="2">
+<li class="">Система открывает страницу оплаты, где отображается:<!-- -->
+<ul>
+<li class="">Имя репетитора</li>
+<li class="">Стоимость урока</li>
+<li class="">Поля для ввода данных карты</li>
+</ul>
+</li>
+<li class="">Ученик вводит данные карты и нажимает «Оплатить».</li>
+<li class="">Система отправляет запрос в Платежный шлюз на проведение платежа с холдированием.</li>
+<li class="">Платежный шлюз блокирует сумму на карте ученика.</li>
+<li class="">Платежный шлюз возвращает подтверждение об успешном холдировании.</li>
+<li class="">Система создает запись о платеже в БД со статусом «холдировано».</li>
+<li class="">Система отображает ученику сообщение об успешной оплате.</li>
+<li class="">Система отправляет уведомление репетитору.</li>
+<li class="">Ученик возвращается в чат.</li>
+<li class="">После проведения урока репетитор нажимает кнопку «Подтвердить проведение урока».</li>
+<li class="">Система отправляет запрос в Платежный шлюз на списание средств.</li>
+<li class="">Платежный шлюз списывает средства.</li>
+<li class="">Система обновляет статус платежа на «завершен».</li>
+<li class="">Средства зачисляются на внутренний счет репетитора.|
+|<strong>Постусловия (Успех)</strong>|- Средства списаны с карты ученика</li>
+</ol>
+<ul>
+<li class="">Репетитор получил оплату на внутренний счет</li>
+<li class="">Статус платежа - «завершен»|
+|<strong>Постусловия (Неудача)</strong>|- Платеж не прошел</li>
+<li class="">Средства не списаны|
+|<strong>Альтернативный поток 1:</strong>|<strong>Ошибка оплаты</strong>
+Точка входа: шаг 5
+5.1 Платежный шлюз возвращает ошибку.
+5.2 Система отображает сообщение об ошибке.
+5.3 Use Case завершен.|
+|<strong>Альтернативный поток 2:</strong>|<strong>Отмена оплаты</strong>
+Точка входа: шаг 3
+3.1 Ученик нажимает «Отмена» или закрывает страницу оплаты.
+3.2 Платеж не проводится.
+3.3 Use Case завершен.|
+|<strong>Альтернативный поток 3:</strong>|<strong>Репетитор не подтвердил урок</strong>
+Точка входа: после шага 10
+10.1 Репетитор не нажимает кнопку «Подтвердить проведение урока» в течение 24 часов после запланированного времени урока.
+10.2 Система автоматически отменяет холдирование.
+10.3 Система отправляет запрос в Платежный шлюз на отмену холдирования.
+10.4 Платежный шлюз возвращает средства на карту ученика.
+10.5 Система обновляет статус платежа на «отменен».
+10.6 Система отправляет уведомление ученику: «Средства возвращены, так как урок не был подтвержден репетитором».
+10.7 Система отправляет уведомление репетитору: «Урок не подтвержден, средства возвращены ученику».
+10.8 Use Case завершен.|
+|<strong>Альтернативный поток 4:</strong>|<strong>Потеря интернет-соединения</strong>                                                                        Точка входа: шаг 4                                                                                                  4.1 Во время запроса  данных происходит обрыв соединения (таймаут, ошибка сети).
+4.2 Система прерывает процесс.
+4.3 Отображается сообщение: «Отсутствует соединение с интернетом. Проверьте сеть и повторите попытку».
+4.4 Кнопка «Отправить» становится активной
+4.5 Система возвращается к шагу 3|
+|<strong>Исключительный поток 1:</strong>|<strong>Платежный шлюз недоступен</strong>
+Точка входа: шаг 4
+4.1 Система не может получить ответ от Платежного шлюза.
+4.2 Отображается сообщение: «Платежная система временно недоступна. Попробуйте позже».
+4.3 Use Case завершен.|
+|<strong>Исключительный поток 2:</strong>|<strong>Ошибка сохранения в БД</strong>
+Точка входа: шаг 7
+7.1 При сохранении платежа возникает ошибка БД.
+7.2 Система логирует ошибку.
+7.3 Система отправляет запрос на отмену холдирования.
+7.4 Отображается сообщение: «Техническая ошибка. Платеж отменен».
+7.5 Use Case завершен.|
+|<strong>Бизнес-правила</strong>|BR-01: Комиссия платформы 15% удерживается при выплате репетитору.
+BR-02: Средства холдируются до подтверждения проведения урока.
+BR-03: После подтверждения урока средства переводятся на внутренний счет репетитора.
+BR-04: Если урок не состоялся или не подтвержден в течение 24 часов, холдирование отменяется, деньги возвращаются ученику.
+BR-05: Подтвердить урок может только репетитор, проводивший занятие.|</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-11-вывод-заработанных-средств-на-карту">UC-11: Вывод заработанных средств на карту<a href="#uc-11-вывод-заработанных-средств-на-карту" class="hash-link" aria-label="Direct link to UC-11: Вывод заработанных средств на карту" title="Direct link to UC-11: Вывод заработанных средств на карту" translate="no">​</a></h4>
+<table><thead><tr><th>Раздел</th><th>Описание</th></tr></thead><tbody><tr><td><strong>ID</strong></td><td>UC-11</td></tr><tr><td><strong>Название</strong></td><td>Вывод заработанных средств на карту</td></tr><tr><td><strong>Акторы</strong></td><td>- Репетитор (авторизованный пользователь)</td></tr></tbody></table>
+<ul>
+<li class="">Система</li>
+<li class="">Платежный шлюз (сервис выплат)|
+|<strong>Предусловия</strong>|- Репетитор авторизован в системе</li>
+<li class="">Репетитор прошел верификацию документов</li>
+<li class="">На внутреннем счете репетитора есть средства (от проведенных уроков)|
+|<strong>Основной поток</strong>|1. Репетитор переходит в раздел «Баланс» в личном кабинете.</li>
+</ul>
+<ol start="2">
+<li class="">Система отображает текущий баланс (доступные средства) и историю выплат.</li>
+<li class="">Репетитор нажимает кнопку «Вывести средства».</li>
+<li class="">Система открывает форму вывода, где отображается:<!-- -->
+<ul>
+<li class="">Доступная сумма</li>
+<li class="">Поле для ввода суммы (не более доступной)</li>
+<li class="">Поле для ввода номера карты</li>
+</ul>
+</li>
+<li class="">Репетитор вводит сумму, номер карты и нажимает «Вывести».</li>
+<li class="">Система проверяет, что сумма не превышает доступный баланс.</li>
+<li class="">Система отправляет запрос в Платежный шлюз на перевод средств.</li>
+<li class="">Платежный шлюз выполняет перевод на указанную карту.</li>
+<li class="">Система получает подтверждение об успешном переводе.</li>
+<li class="">Система обновляет баланс репетитора (вычитает сумму).</li>
+<li class="">Система обновляет статус выплаты в БД</li>
+<li class="">Система отображает сообщение: «Средства успешно выведены».|
+|<strong>Постусловия (Успех)</strong>|- Средства списаны с внутреннего счета репетитора</li>
+</ol>
+<ul>
+<li class="">Деньги переведены на карту репетитора</li>
+<li class="">В истории выплат появилась новая запись|
+|<strong>Постусловия (Неудача)</strong>|- Средства не списаны</li>
+<li class="">Репетитор видит сообщение об ошибке</li>
+<li class="">Баланс не меняется|
+|<strong>Альтернативный поток 1:</strong>|<strong>Недостаточно средств</strong>
+Точка входа: Шаг 6
+6.1 Система обнаруживает, что запрошенная сумма превышает доступный баланс.
+6.2 Отображается сообщение: «Недостаточно средств для вывода».
+6.3 Пользователь возвращается к шагу 5.|
+|<strong>Альтернативный поток 2:</strong>|<strong>Потеря интернет-соединения</strong>                                                                            Точка входа: шаг 6                                                                                                      6.1 Во время обработки данных происходит обрыв соединения (таймаут, ошибка сети).
+6.2 Система прерывает процесс.
+6.3 Отображается сообщение: «Отсутствует соединение с интернетом. Проверьте сеть и повторите попытку».
+6.4 Кнопка «Вывести средства» становится активной
+6.5 Система возвращается к шагу 3|
+|<strong>Исключительный поток 1:</strong>|<strong>Ошибка платежного шлюза</strong>
+Точка входа: шаг 9
+9.1 Платежный шлюз возвращает ошибку
+9.2 Система логирует ошибку.
+9.3 Отображается сообщение: «Ошибка при переводе средств. Проверьте реквизиты или попробуйте позже».
+9.4 Use Case завершен.|
+|<strong>Исключительный поток 2:</strong>|<strong>Таймаут платежного шлюза</strong>
+Точка входа: шаг 9
+9.1 Система не получает ответ от платежного шлюза в течение 30 секунд.
+9.2 Система сохраняет запрос со статусом «pending» для повторной проверки.
+9.3 Отображается сообщение: «Запрос на вывод принят. Статус можно проверить в истории».
+9.4 Use Case завершен.|
+|<strong>Бизнес-правила</strong>|BR-01: Вывод возможен только после верификации документов.
+BR-02: Комиссия платформы 15% уже удержана при зачислении средств от учеников.
+BR-03: Репетитор может выводить любую сумму, не превышающую доступный баланс.
+BR-04: Все выплаты фиксируются в истории с указанием статуса.|</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="блок-5-администрирование">Блок 5: Администрирование<a href="#блок-5-администрирование" class="hash-link" aria-label="Direct link to Блок 5: Администрирование" title="Direct link to Блок 5: Администрирование" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="uc-12-модерация-контента">UC-12: Модерация контента<a href="#uc-12-модерация-контента" class="hash-link" aria-label="Direct link to UC-12: Модерация контента" title="Direct link to UC-12: Модерация контента" translate="no">​</a></h4>
+<table><thead><tr><th>Раздел</th><th>Описание</th></tr></thead><tbody><tr><td><strong>ID</strong></td><td>UC-12</td></tr><tr><td><strong>Название</strong></td><td>Модерация контента (видео и документов)</td></tr><tr><td><strong>Акторы</strong></td><td>- Администратор (модератор)</td></tr></tbody></table>
+<ul>
+<li class="">Система</li>
+<li class="">Репетитор|
+|<strong>Предусловия</strong>|- Администратор авторизован в системе с правами модератора</li>
+<li class="">В системе есть хотя бы один объект (видео или документ) со статусом «pending» (ожидает проверки)|
+|<strong>Основной поток</strong>|1. Администратор открывает раздел «Модерация» в административной панели.</li>
+</ul>
+<ol start="2">
+<li class="">Система отображает список объектов, ожидающих проверки, с указанием:<!-- -->
+<ul>
+<li class="">Тип объекта (видео-визитка, бесплатный урок, документ на верификацию)</li>
+<li class="">Имя репетитора</li>
+<li class="">Дата загрузки</li>
+<li class="">Статус «pending»</li>
+</ul>
+</li>
+<li class="">Администратор выбирает объект для проверки.</li>
+<li class="">Администратор просматривает контент и проверяет соответствие правилам платформы.</li>
+<li class="">Администратор принимает решение:<!-- -->
+<ul>
+<li class="">Нажимает «Одобрить», если контент соответствует правилам</li>
+<li class="">Нажимает «Отклонить», если есть нарушения и пишет причину</li>
+</ul>
+</li>
+<li class="">Система обновляет статус объекта:<!-- -->
+<ul>
+<li class="">При одобрении: статус «approved»</li>
+<li class="">При отклонении: статус «rejected» и сохраняет причину</li>
+</ul>
+</li>
+<li class="">Система отправляет уведомление репетитору о результате проверки.</li>
+<li class="">Репетитор видит обновленный статус в своем личном кабинете.|
+|<strong>Постусловия (Успех)</strong>|- Объект прошел модерацию и стал доступен (или отклонен с причиной)</li>
+</ol>
+<ul>
+<li class="">Репетитор уведомлен о результате</li>
+<li class="">Счетчик ожидающих объектов уменьшился|
+|<strong>Постусловия (Неудача)</strong>|- Статус объекта не изменился</li>
+<li class="">Администратор видит сообщение об ошибке|
+|<strong>Альтернативный поток 1:</strong>|<strong>Нет объектов для модерации
+Точка входа:</strong> Шаг 2
+2.1 Система не находит объектов со статусом «pending».
+2.2 Отображается сообщение: «Нет объектов, ожидающих модерации».
+2.3 Use Case завершен.|
+|<strong>Альтернативный поток 2:</strong>|<strong>Потеря интернет-соединения</strong>                                                                     Точка входа: шаг 6                                                                                          6.1 Во время обработки данных происходит обрыв соединения (таймаут, ошибка сети).
+6.2 Система прерывает процесс.
+6.3 Отображается сообщение: «Отсутствует соединение с интернетом. Проверьте сеть и повторите попытку».
+6.4 Кнопка «Одобрить»/ «отклонить» становится активной
+4.5 Система возвращается к шагу 5|
+|<strong>Исключительный поток 1:</strong>|<strong>Ошибка сохранения результата
+Точка входа:</strong> Шаг 9
+9.1 При сохранении статуса возникает ошибка БД.
+9.2 Система логирует ошибку.
+9.3 Отображается сообщение: «Не удалось сохранить результат. Попробуйте позже».
+9.4 Use Case завершен.|
+|<strong>Бизнес-правила</strong>|BR-01: Все видео (визитки и уроки) проходят модерацию перед публикацией.
+BR-02: Документы на верификацию проходят модерацию перед присвоением статуса «verified».
+BR-03: При отклонении обязательно указывать причину.
+BR-04: Репетитор получает уведомление о результате модерации.
+BR-05: Отклоненные объекты не отображаются ученикам.
+BR-06: Администратор может отклонить контент, если он нарушает правила платформы (нецензурная лексика, несоответствие тематике и т.д.).|</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/tutortok/docs/scope"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Концепция и границы проекта</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/tutortok/docs/requirements/non-functional"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Нефункциональные требования</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Документация</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/tutortok/docs/scope">Карточка сервиса</a></li><li class="footer__item"><a class="footer__link-item" href="/tutortok/docs/architecture/data-storage-tech">Архитектура</a></li><li class="footer__item"><a class="footer__link-item" href="/tutortok/docs/api/real">API Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Для авторов</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/alexandratsybenko/tutortok" target="_blank" rel="noopener noreferrer" class="footer__link-item">Репозиторий<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Tutortok. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

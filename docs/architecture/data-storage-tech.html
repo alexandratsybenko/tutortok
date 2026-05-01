@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-architecture/data-storage-tech" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Технологии хранения данных | Tutortok</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://alexandratsybenko.github.io/tutortok/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://alexandratsybenko.github.io/tutortok/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://alexandratsybenko.github.io/tutortok/docs/architecture/data-storage-tech"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Технологии хранения данных | Tutortok"><meta data-rh="true" name="description" content="1. Определение сущностей, которые необходимо хранить"><meta data-rh="true" property="og:description" content="1. Определение сущностей, которые необходимо хранить"><link data-rh="true" rel="icon" href="/tutortok/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://alexandratsybenko.github.io/tutortok/docs/architecture/data-storage-tech"><link data-rh="true" rel="alternate" href="https://alexandratsybenko.github.io/tutortok/docs/architecture/data-storage-tech" hreflang="en"><link data-rh="true" rel="alternate" href="https://alexandratsybenko.github.io/tutortok/docs/architecture/data-storage-tech" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Технологии хранения данных","item":"https://alexandratsybenko.github.io/tutortok/docs/architecture/data-storage-tech"}]}</script><script src="https://cdn.jsdelivr.net/npm/docusaurus-plugin-drawio/viewer.min.js"></script><link rel="stylesheet" href="/tutortok/assets/css/styles.adbcd96e.css">
+<script src="/tutortok/assets/js/runtime~main.4ef2833f.js" defer="defer"></script>
+<script src="/tutortok/assets/js/main.b5749c75.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/tutortok/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/tutortok/"><div class="navbar__logo"><img src="/tutortok/img/logo.svg" alt="Tutortok Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/tutortok/img/logo.svg" alt="Tutortok Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Tutortok</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/tutortok/docs/scope">Документация</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/tutortok/docs/api/real">API</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/alexandratsybenko/tutortok" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tutortok/docs/scope"><span title="Концепция и границы проекта" class="linkLabel_WmDU">Концепция и границы проекта</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tutortok/docs/requirements/functional"><span title="Требования" class="categoryLinkLabel_W154">Требования</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tutortok/docs/api/real"><span title="API" class="categoryLinkLabel_W154">API</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/tutortok/docs/architecture/sequence-diagram"><span title="Архитектура" class="categoryLinkLabel_W154">Архитектура</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tutortok/docs/architecture/sequence-diagram"><span title="Диаграмма последовательности" class="linkLabel_WmDU">Диаграмма последовательности</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/tutortok/docs/architecture/asinc"><span title="Асинхронное взаимодействие" class="linkLabel_WmDU">Асинхронное взаимодействие</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/tutortok/docs/architecture/data-storage-tech"><span title="Технологии хранения данных" class="linkLabel_WmDU">Технологии хранения данных</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/tutortok/docs/diagrams/use-case-diagram"><span title="Диаграммы" class="categoryLinkLabel_W154">Диаграммы</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tutortok/docs/erd"><span title="ERD-диаграммы" class="linkLabel_WmDU">ERD-диаграммы</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/tutortok/docs/platform-strategy"><span title="Платформизация проекта" class="linkLabel_WmDU">Платформизация проекта</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/tutortok/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Архитектура</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Технологии хранения данных</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Технологии хранения данных</h1></header><p>#Технологии хранения данных</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-определение-сущностей-которые-необходимо-хранить">1. Определение сущностей, которые необходимо хранить<a href="#1-определение-сущностей-которые-необходимо-хранить" class="hash-link" aria-label="Direct link to 1. Определение сущностей, которые необходимо хранить" title="Direct link to 1. Определение сущностей, которые необходимо хранить" translate="no">​</a></h4>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="сущности">Сущности:<a href="#сущности" class="hash-link" aria-label="Direct link to Сущности:" title="Direct link to Сущности:" translate="no">​</a></h4>
+<ol>
+<li class="">
+<p>Пользователь</p>
+</li>
+<li class="">
+<p>Профиль репетитора</p>
+</li>
+<li class="">
+<p>Видео</p>
+</li>
+<li class="">
+<p>Чат</p>
+</li>
+<li class="">
+<p>Сообщение</p>
+</li>
+<li class="">
+<p>Урок</p>
+</li>
+<li class="">
+<p>Платеж</p>
+</li>
+<li class="">
+<p>Документ ****</p>
+</li>
+<li class="">
+<p>Лайк</p>
+</li>
+<li class="">
+<p>Уведомление</p>
+</li>
+<li class="">
+<p>Событие аналитики</p>
+</li>
+</ol>
+<p><strong>Пользователь</strong></p>
+<p>Атрибуты:</p>
+<ul>
+<li class="">
+<p>id (UUID) - уникальный идентификатор</p>
+</li>
+<li class="">
+<p>email (string) - email, уникальный</p>
+</li>
+<li class="">
+<p>password_hash (string) - хэш пароля</p>
+</li>
+<li class="">
+<p>first_name (string) - имя</p>
+</li>
+<li class="">
+<p>last_name (string) - фамилия</p>
+</li>
+<li class="">
+<p>avatar_url (string, nullable) - ссылка на аватар в S3/CDN</p>
+</li>
+<li class="">
+<p>role (enum: STUDENT, TUTOR, ADMIN) - роль в системе</p>
+</li>
+<li class="">
+<p>email_verified (boolean) -подтвержден ли email</p>
+</li>
+<li class="">
+<p>created_at (timestamp) - дата регистрации</p>
+</li>
+<li class="">
+<p>updated_at (timestamp) - дата последнего изменения</p>
+</li>
+</ul>
+<p>Акторы: Ученик, Репетитор, Администратор</p>
+<p>Характер данных: Транзакционные (OLTP). Строгая консистентность (уникальность email). Чтение при каждом логине.</p>
+<p><strong>Профиль репетитора</strong></p>
+<p>Атрибуты:</p>
+<ul>
+<li class="">
+<p>id (UUID) - связан с User.id (связь: один к одному)</p>
+</li>
+<li class="">
+<p>nickname (string) - уникальный никнейм для URL</p>
+</li>
+<li class="">
+<p>is_verified (boolean) - агрегирующий статус верификации</p>
+</li>
+<li class="">
+<p>language (array[string]) - основной язык преподавания</p>
+</li>
+<li class="">
+<p>specializations (array[string]) - список специализаций</p>
+</li>
+<li class="">
+<p>price_per_hour (decimal) - стоимость часа</p>
+</li>
+<li class="">
+<p>experience_years (integer) - стаж в годах</p>
+</li>
+<li class="">
+<p>rating (float) - средний рейтинг (денормализован)</p>
+</li>
+<li class="">
+<p>about (text) - текст «О себе»</p>
+</li>
+<li class="">
+<p>video_trailer_url (string) - ссылка на видео-визитку</p>
+</li>
+<li class="">
+<p>created_at (timestamp)</p>
+</li>
+<li class="">
+<p>updated_at (timestamp)</p>
+</li>
+</ul>
+<p>Акторы: Репетитор (CRUD), Ученик (R - просмотр), Администратор (R U- модерация и обновление)</p>
+<p>Характер данных:  транзакционные (OLTP) с преобладанием чтения. Профили репетиторов часто запрашиваются для отображения в ленте и на странице профиля, но редактируются редко.</p>
+<p><strong>Видео</strong> (видеовизитки + бесплатные уроки)</p>
+<p>Атрибуты:</p>
+<ul>
+<li class="">
+<p>id (UUID)</p>
+</li>
+<li class="">
+<p>tutor_id</p>
+</li>
+<li class="">
+<p>title (string, nullable) - название (только для уроков)</p>
+</li>
+<li class="">
+<p>description (text, nullable) - описание</p>
+</li>
+<li class="">
+<p>preview_url (string) - ссылка на превью в S3/CDN</p>
+</li>
+<li class="">
+<p>video_url (string) - ссылка на видео в S3/CDN</p>
+</li>
+<li class="">
+<p>duration (integer) - длительность в секундах</p>
+</li>
+<li class="">
+<p>type (enum: TRAILER, LESSON) - тип видео</p>
+</li>
+<li class="">
+<p>status (enum: PENDING_MODERATION, APPROVED, REJECTED)</p>
+</li>
+<li class="">
+<p>created_at (timestamp)</p>
+</li>
+<li class="">
+<p>updated_at (timestamp)</p>
+</li>
+</ul>
+<p>Акторы: Репетитор (C, D), Ученик (R), Администратор (U - модерация)</p>
+<p>Характер данных: Метаданные - транзакционные, файлы - потоковые (Object Storage).</p>
+<p><strong>Чат</strong></p>
+<p>Атрибуты:</p>
+<ul>
+<li class="">
+<p>chat_id (UUID)</p>
+</li>
+<li class="">
+<p>student_id</p>
+</li>
+<li class="">
+<p>tutor_id</p>
+</li>
+<li class="">
+<p>created_at (timestamp)</p>
+</li>
+<li class="">
+<p>last_message_at (timestamp) - денормализовано для сортировки списка чатов</p>
+</li>
+</ul>
+<p>Акторы: Ученик (C - создание), Репетитор (R - чтение)</p>
+<p>Характер данных: Транзакционные (OLTP)</p>
+<p><strong>Сообщение</strong></p>
+<p>Атрибуты:</p>
+<ul>
+<li class="">
+<p>id (UUID)</p>
+</li>
+<li class="">
+<p>chat_id</p>
+</li>
+<li class="">
+<p>sender_id</p>
+</li>
+<li class="">
+<p>text (text)</p>
+</li>
+<li class="">
+<p>created_at (timestamp)</p>
+</li>
+<li class="">
+<p>edited_at (timestamp, nullable</p>
+</li>
+<li class="">
+<p>is_edited (boolean)</p>
+</li>
+<li class="">
+<p>is_read (boolean)</p>
+</li>
+</ul>
+<p>Акторы: Ученик, Репетитор (CRUD)</p>
+<p>Характер данных:  транзакционные (OLTP, требуется постоянная запись)</p>
+<p><strong>Урок</strong></p>
+<p>Атрибуты:</p>
+<ul>
+<li class="">
+<p>id (UUID)</p>
+</li>
+<li class="">
+<p>chat_id</p>
+</li>
+<li class="">
+<p>student_id</p>
+</li>
+<li class="">
+<p>tutor_id</p>
+</li>
+<li class="">
+<p>scheduled_at (timestamp) - запланированное время</p>
+</li>
+<li class="">
+<p>duration_minutes (integer)</p>
+</li>
+<li class="">
+<p>price (decimal)</p>
+</li>
+<li class="">
+<p>status (enum: AWAITING_PAYMENT, PAID, CONFIRMED, COMPLETED, CANCELED, DISPUTED)</p>
+</li>
+<li class="">
+<p>telemost_link (string, nullable) - ссылка на Яндекс.Телемост</p>
+</li>
+<li class="">
+<p>created_at (timestamp)</p>
+</li>
+<li class="">
+<p>expires_at (timestamp) - для автоматической отмены при неоплате</p>
+</li>
+</ul>
+<p>Акторы: Ученик (оплата, подтверждение), Репетитор (подтверждение), Система (таймеры)</p>
+<p>Характер данных: Транзакционные, важно соблюдать ACID</p>
+<p><strong>Платеж</strong></p>
+<p>Атрибуты:</p>
+<ul>
+<li class="">
+<p>id (UUID)</p>
+</li>
+<li class="">
+<p>lesson_id (FK → Lesson)</p>
+</li>
+<li class="">
+<p>student_id (FK → User)</p>
+</li>
+<li class="">
+<p>amount (decimal)</p>
+</li>
+<li class="">
+<p>status (enum: PENDING, HELD, CAPTURED, REFUNDED)</p>
+</li>
+<li class="">
+<p>external_payment_id (string) - ID транзакции в ЮKassa</p>
+</li>
+<li class="">
+<p>created_at (timestamp)</p>
+</li>
+<li class="">
+<p>updated_at (timestamp)</p>
+</li>
+</ul>
+<p>Акторы: Ученик (C - инициирование), Система (U - webhook)</p>
+<p>Характер данных: Транзакционные, финансово-критичные (ACID)</p>
+<p><strong>Документ (репетиторы отправляют документы на проверку для подтверждения личности)</strong></p>
+<p>Атрибуты:</p>
+<ul>
+<li class="">
+<p>id (UUID)</p>
+</li>
+<li class="">
+<p>tutor_id (FK → TutorProfile)</p>
+</li>
+<li class="">
+<p>document_url (string) - приватная ссылка на защищенное S3</p>
+</li>
+<li class="">
+<p>status (enum: PENDING, APPROVED, REJECTED)</p>
+</li>
+<li class="">
+<p>admin_comment (text, nullable) - причина отказа</p>
+</li>
+<li class="">
+<p>uploaded_at (timestamp)</p>
+</li>
+<li class="">
+<p>reviewed_at (timestamp)</p>
+</li>
+</ul>
+<p>Акторы: Репетитор (C), Администратор (R/U)</p>
+<p>Характер данных: Транзакционные</p>
+<p><strong>Лайк</strong></p>
+<p>Атрибуты:</p>
+<ul>
+<li class="">
+<p>student_id (FK → User)</p>
+</li>
+<li class="">
+<p>tutor_id (FK → TutorProfile)</p>
+</li>
+<li class="">
+<p>created_at (timestamp)</p>
+</li>
+</ul>
+<p>Акторы: Ученик (C/D)</p>
+<p>Характер данных: Транзакционные (постоянная запись). Для чтения допустима Eventual Consistency.</p>
+<p><strong>Уведомление</strong></p>
+<p>Атрибуты:</p>
+<ul>
+<li class="">
+<p>id (UUID, PK)</p>
+</li>
+<li class="">
+<p>user_id (FK -&gt; User)</p>
+</li>
+<li class="">
+<p>type (enum: LESSON_REMINDER, MODERATION_RESULT, NEW_MESSAGE, PAYOUT)</p>
+</li>
+<li class="">
+<p>title (string)</p>
+</li>
+<li class="">
+<p>body (text)</p>
+</li>
+<li class="">
+<p>is_read (boolean)</p>
+</li>
+<li class="">
+<p>created_at</p>
+</li>
+</ul>
+<p>Акторы: Система (C), ученик/репетитор (R/U - чтение/отметка прочитанным).</p>
+<p>Характер данных: Транзакционные. Чаще запись. Требуется хранение данных (для просмотра последних уведомлений). Формат уведомлений непостоянный.</p>
+<p><strong>Данные для аналитики</strong></p>
+<p>Сущность, необходимая для развития платформы (версия 2.0+).</p>
+<p>Поток событий о действиях пользователей (просмотры видео, клики по профилям, отправка сообщений).</p>
+<p>Атрибуты:</p>
+<ul>
+<li class="">
+<p>event_id (UUID)</p>
+</li>
+<li class="">
+<p>event_type (string)</p>
+</li>
+<li class="">
+<p>user_id (UUID)</p>
+</li>
+<li class="">
+<p>payload (JSON) - детали события</p>
+</li>
+<li class="">
+<p>timestamp (timestamp)</p>
+</li>
+</ul>
+<p>Акторы: Система (C - запись), Аналитик / BI-система (R - пакетное чтение).</p>
+<p>Характер данных: Аналитические (OLAP). Очень большой объем, потоковая запись, не требуют строгой консистентности в реальном времени, оптимизированы для пакетной обработки и агрегации.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-определение-подходящих-технологий-хранения">2. Определение подходящих технологий хранения<a href="#2-определение-подходящих-технологий-хранения" class="hash-link" aria-label="Direct link to 2. Определение подходящих технологий хранения" title="Direct link to 2. Определение подходящих технологий хранения" translate="no">​</a></h4>
+<table><thead><tr><th>Шаг анализа</th><th>Пользователь</th><th>Профиль репетитора</th><th>Урок, Платеж</th><th>Чат, Сообщение</th><th>Метаданные (Видео)</th><th>Метаданные (Документы)</th><th>Файлы (Видео)</th><th>Файлы (Документы)</th><th>Лайк</th><th>Уведомление</th><th>Аналитика</th></tr></thead><tbody><tr><td><strong>Количество данных</strong></td><td>5к пользователей</td><td>300 репетиторов</td><td>500 уроков/год</td><td>1к чатов, 50к сообщений</td><td>300 видео, 500 уроков</td><td>300 документов</td><td>300 визиток + до 500 уроков (файлы)</td><td>300 документов</td><td>50-100к лайков</td><td>100к уведомлений</td><td>500 000 событий/мес</td></tr><tr><td><strong>Сколько данных?</strong></td><td>&lt; 1 ГБ</td><td>&lt; 1 ГБ</td><td>&lt; 1 ГБ</td><td>&lt; 5 ГБ</td><td>&lt; 1 ГБ</td><td>&lt; 1 ГБ</td><td>1 ГБ - 1 ТБ</td><td>1 ГБ - 1 ТБ</td><td>&lt; 1 ГБ</td><td>&lt; 1 ГБ</td><td>1 ГБ - 1 ТБ</td></tr><tr><td><strong>Паттерны доступа</strong></td><td>OLTP. Частые чтения (лента), редкая запись.</td><td>OLTP. Частые чтения (лента), редкая запись.</td><td>OLTP. Равномерно чтение/запись.</td><td>OLTP. Интенсивная запись, чтение.</td><td>OLTP. Редкая запись, частое чтение.</td><td>OLTP. Редкая запись, частое чтение.</td><td>Append, full read(записал целиком, читаешь целиком)</td><td>Append, full read(записал целиком, читаешь целиком)</td><td>Key-Value lookup (очень быстрое чтение/запись одного объекта). Частые чтения счетчиков.</td><td>OLTP (много маленьких операций)</td><td>Event Streaming(очень быстрая запись) + OLAP(редко пишет, часто читает).</td></tr><tr><td><strong>Консистентность</strong></td><td>Strong Consistency (уникальность)</td><td>Strong Consistency (уникальность)</td><td>Strong Consistency</td><td>Strong Consistency (в рамках чата)</td><td>Strong Consistency</td><td>Strong Consistency</td><td>Eventual Consistency. Данные могут быть временно рассинхронизированы.</td><td>Eventual Consistency. Данные могут быть временно рассинхронизированы.</td><td>Eventual Consistency</td><td>Strong / Eventual Consistency</td><td>Eventual Consistency</td></tr><tr><td><strong>Доступность</strong></td><td>99,5% (MVP)</td><td>99,5% (MVP)</td><td>99,5% (MVP)</td><td>99,5% (MVP)</td><td>99,5% (MVP)</td><td>99,5% (MVP)</td><td>99,9% (S3 дает из коробки 99.9%)</td><td>99,9% (S3 дает из коробки 99.9%)</td><td>99,5%</td><td>99,5%</td><td>Не критична (может отставать)</td></tr><tr><td><strong>Мутабельность схемы</strong></td><td>Жесткая</td><td>Жесткая</td><td>Жесткая</td><td>Жесткая</td><td>Жесткая</td><td>Жесткая</td><td>Схемы нет(Плоское пространство ключей)</td><td>Схемы нет(Плоское пространство ключей)</td><td>Жесткая</td><td>Гибкая(разные типы уведомлений)</td><td>Гибкая (JSON payload)</td></tr><tr><td><strong>Транзакции</strong></td><td>Да, критично</td><td>Да, критично</td><td>Да, критично</td><td>Да, но не критично между разными чатами</td><td>Да, критично (связь с юзером)</td><td>Да, критично (связь с юзером)</td><td>Нет, можно жить без: (на уровне S3 транзакций нет).</td><td>Нет, можно жить без: (на уровне S3 транзакций нет).</td><td>Не нужны</td><td>Не нужны</td><td>Не нужны</td></tr><tr><td><strong>Запросы</strong></td><td>Фильтрация и поиск</td><td>Фильтрация и поиск</td><td>Фильтрация и поиск (JOIN, поиск по ID и статусам)</td><td>Фильтрация и поиск (по id с пагинацией)</td><td>Фильтрация и поиск по ID и FK</td><td>Фильтрация и поиск по ID и FK</td><td>Запрос по точному URL.</td><td>Запрос по точному URL.</td><td>Простой поиск по ключу</td><td>Фильтрация по user_id</td><td>Агрегация и группировка (посчитай среднее)</td></tr><tr><td><strong>Стоимость</strong></td><td>Дешево</td><td>Дешево</td><td>Дешево</td><td>Дешево</td><td>Дешево</td><td>Дешево</td><td>Средне / Дешево</td><td>Средне / Дешево</td><td>Дешево</td><td>Дешево</td><td>Средне/Дешево</td></tr><tr><td><strong>Итоговая технология</strong></td><td><strong>Реляционная СУБД</strong></td><td><strong>Реляционная СУБД</strong></td><td><strong>Реляционная СУБД</strong></td><td><strong>Реляционная СУБД</strong> (MVP)</td><td><strong>Реляционная СУБД</strong></td><td><strong>Реляционная СУБД</strong></td><td><strong>Object Storage</strong> (S3 / Selectel)</td><td><strong>Object Storage</strong> (S3 / Selectel)</td><td><strong>Реляционная СУБД</strong> (возможно Redis в v2.0)</td><td><strong>Реляционная СУБД</strong> (поле JSONB)</td><td><strong>Data Lake</strong></td></tr></tbody></table>
+<p>Аанализ показал, что оптимальная архитектура хранения данных должна быть спроектирована на основе polyglot persistence (использование разных технологий хранения под конкретные задачи).</p>
+<p><strong>1. Реляционная СУБД</strong></p>
+<p>Большая часть сущностей  (пользователи, профили, уроки, платежи, метаданные, чаты) имеет жесткую реляционную структуру и требует транзакционной целостности (strong consistency, ACID). Ожидаемые объемы данных на этапе MVP небольшие (до 5 ГБ), так что реляционная СУБД легко справится с нагрузкой (OLTP).</p>
+<p>Есть сущность, которая может потребовать гибкой структуры в зависимости от типа: уведомления. Будет использован тип данных Json внутри той же РСУБД. Избавляет от необходимости разворачивать отдельную Document DB (например, MongoDB). Для бюджета и заложенного времени на разработку MVP - это оптимальный вариант.</p>
+<p><strong>2. Object Storage (S3-совместимое хранилище)</strong></p>
+<p>Бинарные файлы (видеовизитки, бесплатные уроки, сканы паспортов) обладают паттерном доступа Append, full read (запись один раз, чтение целиком). Хранение 120+ ГБ неструктурированных данных в реляционной СУБД приведет к ухудшению производительности. Поэтому файлы выносятся в облачное хранилище S3, которое обеспечивает горизонтальное масштабирование, потоковую отдачу видео, дешевое хранение, а в РСУБД сохраняются только ссылки на эти объекты.</p>
+<p><strong>3. Эволюционная архитектура</strong></p>
+<p>В рамках MVP приняты архитектурные допущения:</p>
+<ul>
+<li class="">
+<p>Лайки и счетчики на старте будут храниться в РСУБД. При росте платформы этот функционал будет вынесен в Key-Value хранилище (например, Redis) для обеспечения максимальной скорости и разгрузки основной базы.</p>
+</li>
+<li class="">
+<p>События аналитики (OLAP-нагрузка) изолированы от транзакционных данных. В версии 2.0+ планируется выгрузка этих событий (event streaming) в Data Lake для агрегации, построения ИИ-рекомендаций для ленты видео без влияния на производительность операционной базы данных.</p>
+</li>
+</ul>
+<p>Таким образом, выбранный стек технологий закрывает текущие потребности пользователей платформы, укладывается в рамки MVP и имеет потенциал для горизонтального масштабирования в будущих версиях.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/tutortok/docs/architecture/asinc"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Асинхронное взаимодействие</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/tutortok/docs/diagrams/use-case-diagram"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Use Case Diagram</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Документация</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/tutortok/docs/scope">Карточка сервиса</a></li><li class="footer__item"><a class="footer__link-item" href="/tutortok/docs/architecture/data-storage-tech">Архитектура</a></li><li class="footer__item"><a class="footer__link-item" href="/tutortok/docs/api/real">API Reference</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Для авторов</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/alexandratsybenko/tutortok" target="_blank" rel="noopener noreferrer" class="footer__link-item">Репозиторий<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Tutortok. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
