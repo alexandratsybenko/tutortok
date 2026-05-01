@@ -311,7 +311,7 @@ sidebar_position: 12
 
 - user_id (UUID)
 
--  payload (JSON) - детали события (например, {"tutor_id": "...", "video_id": "..."})
+-  payload (JSON) - детали события
 
 - timestamp (timestamp)
 

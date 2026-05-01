@@ -1,6 +1,6 @@
 ---
 title: API 1
-sidebar_position: 8
+sidebar_position: 2
 ---
 
 #API 1
@@ -56,7 +56,7 @@ sidebar_position: 8
 
 
 
-1. Профиль репетитора. Передаются полные данные репетитора, также ссылка на видеовизитку. Используется на экране /tutor/{tutorId}.
+1. Профиль репетитора. Передаются полные данные репетитора, также ссылка на видеовизитку. Используется на экране /tutor/`{tutorId}`.
 
 ```JSON
 {
@@ -78,7 +78,7 @@ sidebar_position: 8
 
 
 
-1. Бесплатный урок. Используется на экране /tutor/{tutorId}. Передается массивом (может быть пустым или содержать один/несколько уроков).
+1. Бесплатный урок. Используется на экране /tutor/`{tutorId}`. Передается массивом (может быть пустым или содержать один/несколько уроков).
 
 ```JSON
 {
@@ -105,7 +105,7 @@ sidebar_position: 8
   "tutor": {
     "id": "550e8400-e29b-41d4-a716-446655440000",
     "name": "Anna",
-    "isVerified": true
+    "isVerified": true,
     "avatarUrl": "https://cdn.tutortok.ru/avatars/annatutor.jpg",
     "isOnline": false,
     "lastSeenAt": "2026-04-16T11:30:00Z"
@@ -133,7 +133,7 @@ sidebar_position: 8
 
 
 
-1. Сообщение. Используется на экране /chat/{chatId}. Представляет одно сообщение в истории переписки.
+1. Сообщение. Используется на экране /chat/\{chatId\}. Представляет одно сообщение в истории переписки.
 
 ```JSON
 {
@@ -154,11 +154,11 @@ sidebar_position: 8
 |-|-|-|
 |Элемент ленты (FeedItem[])|/api/v1/feed|GET|
 |Доступные фильтры (Filters)|/api/v1/filters|GET|
-|Профиль репетитора (TutorProfile)|/api/v1/tutors/{tutorId}|GET|
-|Бесплатный урок (VideoLesson[])|/api/v1/tutors/{tutorId}/lessons|GET|
+|Профиль репетитора (TutorProfile)|/api/v1/tutors/`{tutorId}`|GET|
+|Бесплатный урок (VideoLesson[])|/api/v1/tutors/`{tutorId}`/lessons|GET|
 |Идентификатор созданного чата|/api/v1/chats|POST|
-|Данные чата (ChatData)|/api/v1/chats/{chatId}|GET|
-|Сообщение (ChatMessage)|/api/v1/chats/{chatId}/messages|POST|
+|Данные чата (ChatData)|/api/v1/chats/`{chatId}`|GET|
+|Сообщение (ChatMessage)|/api/v1/chats/`{chatId}`/messages|POST|
 
 
 
@@ -208,7 +208,7 @@ Query-params: Нет.
 
 **3. Профиль репетитора**
 
-**GET /api/v1/tutors/{tutorId}**
+**GET /api/v1/tutors/\{tutorId\}**
 
 Path-params: tutorId (string, UUID, обязательный) - уникальный идентификатор репетитора.
 
@@ -220,7 +220,7 @@ Query-params: Нет.
 
 **4. Бесплатные уроки репетитора**
 
-**GET /api/v1/tutors/{tutorId}/lessons**
+**GET /api/v1/tutors/\{tutorId\}/lessons**
 
 Path-params: tutorId (string, UUID, обязательный) - идентификатор репетитора
 
@@ -256,7 +256,7 @@ Query-params: Нет.
 
 **6. Получение данных чата (Агрегированный запрос)**
 
-**GET /api/v1/chats/{chatId}**
+**GET /api/v1/chats/\{chatId\}**
 
 Path-params: chatId (string, UUID, обязательный) - идентификатор чата.
 
@@ -268,7 +268,7 @@ Query-params:
 
 Модель запроса (Body): Пусто.
 
-Модель ответа: Объект ChatData. Содержит вложенный объект tutor, массив объектов messages (Array<ChatMessage>) и вложенный объект pendingLesson (если есть урок, ожидающий оплаты). См. сущность 5 "Данные чата".
+Модель ответа: Объект ChatData. Содержит вложенный объект tutor, массив объектов messages (Array`<ChatMessage>`) и вложенный объект pendingLesson (если есть урок, ожидающий оплаты). См. сущность 5 "Данные чата".
 
 Пример запроса с пагинацией:
 
@@ -276,7 +276,7 @@ GET /api/v1/chats/880e8400-e29b-41d4-a716-446655440003?limit=50&before=2026-04-1
 
 **7. Отправка сообщения в чат**
 
-**POST /api/v1/chats/{chatId}/messages**
+**POST /api/v1/chats/\{chatId\}/messages**
 
 Path-params: chatId (string, UUID, обязательный) - идентификатор чата.
 
@@ -291,477 +291,3 @@ Query-params: Нет.
 ```
 
 Модель ответа: Объект ChatMessage. Сервер возвращает сформированное сообщение с присвоенным id, датой создания createdAt и т.д., чтобы фронтенд мог добавить его в список на экране. См. сущность 6
-
-
-
-#### Спецификация в формате OpenAPI:
-
-```YAML
-openapi: 3.0.3
-info:
-  title: TutorTok API
-  description: API платформа для поиска репетиторов иностранных языков с видеовизитками
-  version: 1.0.0
-
-servers:
-  - url: https://api.tutortok.ru/api/v1
-
-security:
-  - BearerAuth: []
-
-paths:
-  /feed:
-    get:
-      summary: Получить ленту видеовизиток
-      description: Возвращает список элементов ленты с поддержкой пагинации и фильтрации
-      tags:
-        - Feed
-      parameters:
-        - $ref: '#/components/parameters/LimitParam'
-        - $ref: '#/components/parameters/OffsetParam'
-        - name: language
-          in: query
-          schema:
-            $ref: '#/components/schemas/LanguageEnum'
-        - name: minPrice
-          in: query
-          description: Минимальная цена за час
-          schema:
-            type: integer
-            minimum: 0
-        - name: maxPrice
-          in: query
-          description: Максимальная цена за час
-          schema:
-            type: integer
-            minimum: 0
-        - name: specializations
-          in: query
-          style: form
-          explode: true
-          schema:
-            type: array
-            items:
-              type: string
-        - name: sort
-          in: query
-          schema:
-            $ref: '#/components/schemas/SortEnum'
-      responses:
-        '200':
-          description: Успешная загрузка ленты
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/FeedItem'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-
-  /filters:
-    get:
-      summary: Получить справочник фильтров
-      tags:
-        - Feed
-      responses:
-        '200':
-          description: Справочник доступных фильтров
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Filters'
-
-  /tutors/{tutorId}:
-    get:
-      summary: Получить профиль репетитора
-      tags:
-        - Tutors
-      parameters:
-        - $ref: '#/components/parameters/TutorIdParam'
-      responses:
-        '200':
-          description: Данные профиля репетитора
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/TutorProfile'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
-
-  /tutors/{tutorId}/lessons:
-    get:
-      summary: Получить бесплатные уроки репетитора
-      tags:
-        - Tutors
-      parameters:
-        - $ref: '#/components/parameters/TutorIdParam'
-      responses:
-        '200':
-          description: Список видеоуроков
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/VideoLesson'
-
-  /chats:
-    post:
-      summary: Создать чат с репетитором
-      description: Идемпотентный метод. Если чат уже существует, возвращает его ID
-      tags:
-        - Chats
-      parameters:
-      - name: x-idempotency-key
-        in: header
-        required: false
-        description: Ключ идемпотентности для безопасного повтора запросов
-        schema:
-          $ref: '#/components/schemas/UUID'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [tutorId]
-              properties:
-                tutorId:
-                  $ref: '#/components/schemas/UUID'
-      responses:
-        '201':
-          description: Новый чат успешно создан
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  chatId:
-                    $ref: '#/components/schemas/UUID'
-        '200':
-          description: Чат уже существует, возвращен существующий ID
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  chatId:
-                    $ref: '#/components/schemas/UUID'
-        '400':
-          $ref: '#/components/responses/ValidationError'
-
-  /chats/{chatId}:
-    get:
-      summary: Получить данные чата
-      tags:
-        - Chats
-      parameters:
-        - $ref: '#/components/parameters/ChatIdParam'
-        - $ref: '#/components/parameters/LimitParam'
-        - name: before
-          in: query
-          schema:
-            type: string
-            format: date-time
-      responses:
-        '200':
-          description: Агрегированные данные чата (сообщения, статус репетитора, ожидающий урок)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ChatData'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
-
-  /chats/{chatId}/messages:
-    post:
-      summary: Отправить сообщение в чат
-      tags:
-        - Chats
-      parameters:
-        - $ref: '#/components/parameters/ChatIdParam'
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [text]
-              properties:
-                text:
-                  type: string
-                  maxLength: 1000
-      responses:
-        '201':
-          description: Сообщение создано
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ChatMessage'
-        '400':
-          $ref: '#/components/responses/ValidationError'
-        '401':
-          $ref: '#/components/responses/UnauthorizedError'
-        '404':
-          $ref: '#/components/responses/NotFoundError'
-
-components:
-
-  parameters:
-    LimitParam:
-      name: limit
-      in: query
-      description: Максимальное количество возвращаемых записей
-      schema:
-        type: integer
-        default: 10
-        maximum: 50
-    OffsetParam:
-      name: offset
-      in: query
-      description: Смещение для пагинации
-      schema:
-        type: integer
-        default: 0
-    TutorIdParam:
-      name: tutorId
-      in: path
-      required: true
-      schema:
-        $ref: '#/components/schemas/UUID'
-    ChatIdParam:
-      name: chatId
-      in: path
-      required: true
-      schema:
-        $ref: '#/components/schemas/UUID'
-
-  responses:
-    NotFoundError:
-      description: Ресурс не найден
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorStructure'
-    UnauthorizedError:
-      description: Пользователь не авторизован
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorStructure'
-    ValidationError:
-      description: Ошибка валидации данных
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorStructure'
-
-  schemas:
-    UUID:
-      type: string
-      format: uuid
-
-    LanguageEnum:
-      type: string
-      enum: [ENGLISH, GERMAN, SPANISH, FRENCH, CHINESE]
-
-    SortEnum:
-      type: string
-      enum: [rating, price_asc, price_desc, experience]
-
-    ErrorStructure:
-      type: object
-      properties:
-        errorCode:
-          type: string
-        message:
-          type: string
-
-    FilterOption:
-      type: object
-      properties:
-        value:
-          type: string
-        label:
-          type: string
-
-    FeedItem:
-      type: object
-      properties:
-        tutorId:
-          $ref: '#/components/schemas/UUID'
-        videoUrl:
-          type: string
-          format: uri
-        tutorName:
-          type: string
-        avatarUrl:
-          type: string
-          format: uri
-        isVerified:
-          type: boolean
-        language:
-          $ref: '#/components/schemas/LanguageEnum'
-        pricePerHour:
-          type: number
-          format: float
-        rating:
-          type: number
-          format: float
-        isLiked:
-          type: boolean
-
-    Filters:
-      type: object
-      properties:
-        languages:
-          type: array
-          items:
-            $ref: '#/components/schemas/FilterOption'
-        specializations:
-          type: array
-          items:
-            $ref: '#/components/schemas/FilterOption'
-        priceRange:
-          type: object
-          properties:
-            min:
-              type: integer
-            max:
-              type: integer
-        sortOptions:
-          type: array
-          items:
-            $ref: '#/components/schemas/FilterOption'
-
-    TutorProfile:
-      type: object
-      properties:
-        id:
-          $ref: '#/components/schemas/UUID'
-        firstName:
-          type: string
-        lastName:
-          type: string
-        nickname:
-          type: string
-        avatarUrl:
-          type: string
-          format: uri
-        isVerified:
-          type: boolean
-        language:
-          $ref: '#/components/schemas/LanguageEnum'
-        specializations:
-          type: array
-          items:
-            type: string
-        pricePerHour:
-          type: number
-          format: float
-        experienceYears:
-          type: integer
-        rating:
-          type: number
-          format: float
-        about:
-          type: string
-        videoTrailerUrl:
-          type: string
-          format: uri
-
-    VideoLesson:
-      type: object
-      properties:
-        id:
-          $ref: '#/components/schemas/UUID'
-        title:
-          type: string
-        previewUrl:
-          type: string
-          format: uri
-        videoUrl:
-          type: string
-          format: uri
-        duration:
-          type: integer
-        description:
-          type: string
-
-    ChatMessage:
-      type: object
-      properties:
-        id:
-          $ref: '#/components/schemas/UUID'
-        senderId:
-          $ref: '#/components/schemas/UUID'
-        text:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        editedAt:
-          type: string
-          format: date-time
-          nullable: true
-        isEdited:
-          type: boolean
-
-    PendingLesson:
-      type: object
-      properties:
-        lessonId:
-          $ref: '#/components/schemas/UUID'
-        date:
-          type: string
-          format: date
-        time:
-          type: string
-        durationMinutes:
-          type: integer
-        price:
-          type: number
-          format: float
-        status:
-          type: string
-          enum: [AWAITING_PAYMENT, PAID, CANCELLED]
-
-    ChatData:
-      type: object
-      properties:
-        chatId:
-          $ref: '#/components/schemas/UUID'
-        tutor:
-          type: object
-          properties:
-            id:
-              $ref: '#/components/schemas/UUID'
-            name:
-              type: string
-            avatarUrl:
-              type: string
-              format: uri
-            isVerified:
-              type: boolean
-            isOnline:
-              type: boolean
-            lastSeenAt:
-              type: string
-              format: date-time
-        messages:
-          type: array
-          items:
-            $ref: '#/components/schemas/ChatMessage'
-        pendingLesson:
-          $ref: '#/components/schemas/PendingLesson'
-          nullable: true
-          
-  securitySchemes:
-    BearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
-      description: Авторизация по JWT токену
-```
-

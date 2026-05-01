@@ -5,7 +5,7 @@ const simplePlantUML = require("@akebifiky/remark-simple-plantuml");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Tutortok',
-  tagline: 'Документация сервиса поиска репетиторов',
+  tagline: 'Документация сервиса для поиска репетитора',
   favicon: 'img/favicon.ico',
   url: 'https://alexandratsybenko.github.io',
   baseUrl: '/tutortok/',
@@ -41,11 +41,11 @@ const config = {
         specs: [
           {
             id: 'tutortok',
-            spec: 'api_specs/openapi.yaml',
+            spec: 'api_specs/tutortok_openapi.yaml',
           },
         ],
         theme: {
-          primaryColor: '#1890ff',
+          primaryColor: '#045eb2',
         },
       }
     ],
@@ -62,12 +62,13 @@ const config = {
       items: [
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'scope',
           position: 'left',
           label: 'Документация',
         },
         {
-          to: '/docs/api',
+          type: 'doc',
+          docId: 'api/real',
           label: 'API',
           position: 'left',
         },
@@ -86,15 +87,15 @@ const config = {
           items: [
             {
               label: 'Карточка сервиса',
-              to: '/docs/intro',
+              to: '/docs/scope',              // ✅ твой существующий файл
             },
             {
               label: 'Архитектура',
-              to: '/docs/architecture/arch',
+              to: '/docs/architecture/data-storage-tech',  // ✅ существующий файл
             },
             {
               label: 'API Reference',
-              to: '/docs/api',
+              to: '/docs/api/real',           // ✅ твой файл с API
             },
           ],
         },
